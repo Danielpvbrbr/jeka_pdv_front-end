@@ -1,0 +1,32 @@
+.cont-central{
+  height: 82vh;
+  width: 100vw;
+  background-color:#e6e6e6;
+  
+}
+.cont-table{
+  margin: 100px 20em 0px ;
+  width: 664px;
+  background-color:#bbc8d0;
+  padding: 0.8em;
+}
+.cont-table table{
+  margin-bottom: 2px;
+}
+
+.cont-table table thead tr th{
+  text-align: center;
+  padding: 0.8em;
+  border: none;
+  color: #ffffff;
+}
+.cont-table table tbody tr td{
+  text-align: center;
+  padding: 0.4em;
+}
+.tab-zeb tr:nth-child(odd) {
+  background-color:#a8b3b9;
+}
+.tab-zeb tr:nth-child(even) {
+  background-color:#bbc8d0;
+}

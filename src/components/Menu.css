@@ -1,0 +1,21 @@
+.cont-menu{
+  background-color: #bbc8d0;
+  margin: 0px -15px -15px -15px;
+}
+.cont-menu h4, p{
+  color: #4d4c4c;
+
+}
+.titulo-menu{
+  margin: 14px -5px 1px 15px;
+}
+.format-link p:hover{
+  margin: -14px -35px 0px 2px;
+  padding:20px;
+  background-color:#a8b3b9;
+}
+
+.format-link p{
+  margin: -14px -35px 0px 2px;
+  padding:20px;
+}
