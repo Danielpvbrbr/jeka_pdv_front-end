@@ -1,12 +1,7 @@
-.cont-central{
-  height: 82vh;
+.container-fluid {
   width: 100vw;
-  background-color:#e6e6e6;
-  
-}
-.cont-form{
-  margin: 120px 28em 100px ;
-  width: 400px;
-  height:230px;
-  background-color:#bbc8d0;
+  height: 100vh;
+  background-image:-webkit-gradient(linear, left top, left bottom, from(#0a3fff), to(#b8c7ff));
+  background-image:-o-linear-gradient(#0a3fff, #b8c7ff);
+  background-image:linear-gradient(#0a3fff, #b8c7ff);
 }

@@ -1,21 +1,215 @@
-.cont-menu{
-  background-color: #bbc8d0;
-  margin: 0px -15px -15px -15px;
-}
-.cont-menu h4, p{
-  color: #4d4c4c;
+@media (max-width: 575.98px) { 
+  .dropbtn {
+    font-size: 0.6em;
+  }
+
+  .cont-menu{
+    background-color:#4f72ff;
+    height:30px;
+    float:left;
+    opacity: 0;
+  }
+  
+  li , .dropbtn {
+    color: #f9f9f9;
+    display:inline-block;
+    text-align: left;
+    padding: 0px 0.1em;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+  }
+  
+  li .dropdown{
+    display:block;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bfcafa;
+    min-width: 170px;
+    z-index: 1;
+  }
+
 
 }
-.titulo-menu{
-  margin: 14px -5px 1px 15px;
-}
-.format-link p:hover{
-  margin: -14px -35px 0px 2px;
-  padding:20px;
-  background-color:#a8b3b9;
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  .dropbtn {
+    font-size: 0.8em;
+  }
+
+  .cont-menu{
+    background-color:#4f72ff;
+    height:30px;
+    float:left;
+    opacity: 0;
+  }
+  
+  li , .dropbtn {
+    color: #f9f9f9;
+    display:inline-block;
+    text-align: left;
+    padding: 0px 0.1em;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+  }
+  
+  li .dropdown{
+    display:block;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bfcafa;
+    min-width: 170px;
+    z-index: 1;
+  }
 }
 
-.format-link p{
-  margin: -14px -35px 0px 2px;
-  padding:20px;
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .dropbtn {
+    font-size: 1em;
+  }
+
+  .cont-menu{
+    background-color:#4f72ff;
+    height:30px;
+    float:left;
+  }
+  
+  li , .dropbtn {
+    color: #f9f9f9;
+    display:inline-block;
+    text-align: left;
+    padding: 0px 0.2em;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+  }
+  
+  li .dropdown{
+    display:block;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bfcafa;
+    min-width: 170px;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {  
+  .cont-menu{
+    background-color:#4f72ff;
+    height:30px;
+  }
+  
+  li , .dropbtn {
+    color: #f9f9f9;
+    display:inline-block;
+    text-align: center;
+    padding: 0px 0.6em;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+  }
+  
+  li .dropdown{
+    display:inline-block;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bfcafa;
+    min-width: 170px;
+    z-index: 1;
+  }
+  .dropdown-content p {
+    font-size: 0.7em;
+    font-weight: 500;
+    color: black;
+    padding: 5px 10px 5px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content p:hover {
+    background-color: #929ecb;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {  
+  .cont-menu{
+    background-color:#4f72ff;
+    height:30px;
+  }
+  
+  li , .dropbtn {
+    color: #f9f9f9;
+    display:inline-block;
+    text-align: center;
+    padding: 0px 0.6em;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+  }
+  
+  li .dropdown{
+    display:inline-block;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bfcafa;
+    min-width: 170px;
+    z-index: 1;
+  }
+  .dropdown-content p {
+    font-size: 0.7em;
+    font-weight: 500;
+    color: black;
+    padding: 5px 10px 5px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content p:hover {
+    background-color: #929ecb;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }

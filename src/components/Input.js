@@ -8,6 +8,8 @@ export default class Input extends Component {
         value={this.props.value}
         name={this.props.name}
         id={this.props.id}
+        readOnly={this.props.readOnly}
+        disabled={this.props.disabled}
         placeholder={this.props.placeholder}
         maxLength={this.props.maxLength}
         onChange={this.props.onChange}

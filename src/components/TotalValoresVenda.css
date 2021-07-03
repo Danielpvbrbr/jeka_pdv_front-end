@@ -1,0 +1,259 @@
+@media (max-width: 575.98px) { 
+  .input-campo-total .campo-1 legend{
+    font-size:5pt;
+  } 
+  .input-campo-total .campo-2 legend{
+    font-size:5pt;
+  } 
+  .input-campo-total .campo-3 legend{
+    font-size:5pt;
+  } 
+
+  .input-campo-total .campo-1{
+    text-align: center;
+    width:100px;
+    height:115px;
+    display:inline-block;
+    margin-right: 1px;
+  } 
+  .campo-1 input[type="text"]{
+    font-size:10pt;
+    text-align: center;
+    width:86px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+
+  .input-campo-total .campo-2{
+    text-align: center;
+    width:100px;
+    height:115px;
+    display:inline-block;
+  } 
+  .campo-2 input[type="text"]{
+    font-size:10pt;
+    text-align: center;
+    width:86px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-3{
+    text-align: center;
+    width:95px;
+    height:115px;
+    float:right;
+    margin: 0px 0px 0px;
+  } 
+  .campo-3 input[type="text"]{
+    font-size:17pt;
+    text-align: center;
+    width:85px;
+    height:70px;
+    margin: 5px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+}
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  .input-campo-total .campo-1{
+    text-align: center;
+    width:150px;
+    height:115px;
+    display:inline-block;
+    margin-right: 1px;
+  } 
+  .campo-1 input[type="text"]{
+    text-align: center;
+    width:120px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-2{
+    text-align: center;
+    width:150px;
+    height:115px;
+    display:inline-block;
+  } 
+  .campo-2 input[type="text"]{
+    text-align: center;
+    width:120px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-3{
+    text-align: center;
+    width:150.2px;
+    height:115px;
+    float:right;
+    margin: 0px 0px 0px;
+  } 
+  .campo-3 input[type="text"]{
+    text-align: center;
+    width:120px;
+    height:70px;
+    margin: 5px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {  
+  .input-campo-total .campo-1{
+    text-align: center;
+    width:150px;
+    height:115px;
+    display:inline-block;
+    margin-right: 1px;
+  } 
+  .campo-1 input[type="text"]{
+    text-align: center;
+    width:120px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-2{
+    text-align: center;
+    width:150px;
+    height:115px;
+    display:inline-block;
+  } 
+  .campo-2 input[type="text"]{
+    text-align: center;
+    width:120px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-3{
+    text-align: center;
+    width:150px;
+    height:115px;
+    float:right;
+    margin: 0px 0px 0px;
+  } 
+  .campo-3 input[type="text"]{
+    text-align: center;
+    width:120px;
+    height:74px;
+    margin: 5px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {  
+  .input-campo-total .campo-1{
+    text-align: center;
+    width:200px;
+    height:115px;
+    display:inline-block;
+    margin-right: 1px;
+  } 
+  .campo-1 input[type="text"]{
+    text-align: center;
+    width:160px;
+    height:30px;
+    margin: 1px 0px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-2{
+    text-align: center;
+    width:200px;
+    height:115px;
+    display:inline-block;
+  } 
+  .campo-2 input[type="text"]{
+    text-align: center;
+    width:160px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-3{
+    font-size:20pt;
+    text-align: center;
+    width:200.2px;
+    height:115px;
+    float:right;
+    margin: 0px 0px 0px;
+  } 
+  .campo-3 input[type="text"]{
+    text-align: center;
+    width:160px;
+    height:70px;
+    margin: 5px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+}
+
+@media (min-width: 1200px) {  
+  .input-campo-total .campo-1{
+    text-align: center;
+    width:220px;
+    height:120px;
+    display:inline-block;
+    margin-right: 1px;
+  } 
+  .campo-1 input[type="text"]{
+    text-align: center;
+    width:200px;
+    height:30px;
+    margin: 1px 0px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-2{
+    text-align: center;
+    width:220px;
+    height:120px;
+    display:inline-block;
+  } 
+  .campo-2 input[type="text"]{
+    text-align: center;
+    width:200px;
+    height:30px;
+    margin: 1px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .input-campo-total .campo-3{
+    font-size:20pt;
+    text-align: center;
+    width:210px;
+    height:120px;
+    float:right;
+    margin: 0px 0px 0px;
+  } 
+  .campo-3 input[type="text"]{
+    text-align: center;
+    width:170px;
+    height:70px;
+    margin: 5px 10px 0px;
+    background-color: #9db2ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+} 

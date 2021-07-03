@@ -1,0 +1,226 @@
+@media (max-width: 575.98px) { 
+  .latral-container {
+    height:8em;
+    background-color: #4f72ff;
+  }
+  .container .input-data-hora{
+      display: flex;
+  }
+  .container .input-data-hora input[type="text"]{
+    width:130px;
+    height:30px;
+    text-align: center;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .container .input-data-hora .data{
+    margin-right: auto;
+    margin-top:5px;
+  }
+  .container .input-data-hora .hora{
+    margin-left: auto;
+    margin-top:5px;
+  }
+  .container  legend{
+    text-align: center;
+    color: #fff;
+    font-size:7pt;
+    font-weight: 500;
+  }
+  .container .input-button{
+    position: relative;
+    top:0.5em;
+  }
+
+  .input-button button{
+    font-size: 6.5pt;
+    background-color:#2665ff;
+    color: #fff;
+    width:94px; 
+    height:40px; 
+    text-align: center;
+    margin-left:3.5px;
+  }
+  .input-button button:hover{
+    background-color:rgba(38, 101, 255,0.6);
+    color: #fff;
+  }
+  
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  .latral-container{
+    height:8em;
+    background-color: #4f72ff;
+  }
+  .container .input-data-hora{
+      display: flex;
+  }
+  .container .input-data-hora input[type="text"]{
+    width:130px;
+    height:30px;
+    text-align: center;
+    background-color: #9db2ff;
+    color: #fff;
+  }
+  .container .input-data-hora .data{
+    margin-right: auto;
+    margin-top:5px;
+  }
+  .container .input-data-hora .hora{
+    margin-left: auto;
+    margin-top:5px;
+  }
+  .container  legend{
+    text-align: center;
+    color: #fff;
+    font-size:7pt;
+    font-weight: 500;
+  }
+  .container .input-button{
+    position: relative;
+    top:0.5em;
+  }
+
+  .input-button button{
+    font-size: 6.5pt;
+    background-color:#2665ff;
+    color: #fff;
+    width:94px; 
+    height:40px; 
+    text-align: center;
+    margin-left:3.5px;
+  }
+  .input-button button:hover{
+    background-color:rgba(38, 101, 255,0.6);
+    color: #fff;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {  
+  .container .input-data-hora input[type="text"]{
+    width:150px;
+    height:30px;
+    text-align: center;
+    background-color: #9db2ff;
+    color: #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .container  legend{
+    text-align: center;
+    color: #fff;
+    font-size:9pt;
+    font-weight: 500;
+  }
+  .container .input-button{
+    position: relative;
+    top:17.9em;
+  }
+  .container{
+    height:36.5em;
+  }
+  .input-button button{
+    font-size:9pt;
+    background-color:#2665ff;
+    color: #fff;
+    width:150px; 
+    height:40px; 
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .input-button button:hover{
+    background-color:rgba(38, 101, 255,0.6);
+    color: #fff;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {  
+  .container .input-data-hora input[type="text"]{
+    width:200px;
+    height:30px;
+    text-align: center;
+    background-color: #9db2ff;
+    color: #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .container  legend{
+    text-align: center;
+    color: #fff;
+    font-size:10pt;
+    font-weight: 500;
+  }
+  .container .input-button{
+    position: relative;
+    top:17.9em;
+  }
+  .container{
+    height:36.5em;
+  }
+  .input-button button{
+    background-color:#2665ff;
+    color: #fff;
+    width:200px; 
+    height:40px; 
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .input-button button:hover{
+    background-color:rgba(38, 101, 255,0.6);
+    color: #fff;
+  }
+  
+}
+
+@media (min-width: 1200px) {  
+  .container .input-data-hora input[type="text"]{
+    width:220px;
+    height:30px;
+    text-align: center;
+    background-color: #9db2ff;
+    color: #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .container  legend{
+    text-align: center;
+    color: #fff;
+    font-size:10pt;
+    font-weight: 500;
+  }
+  .container .input-button{
+    position: relative;
+    top:17.9em;
+  }
+  .container{
+    height:36.5em;
+  }
+  .input-button button{
+    background-color:#2665ff;
+    color: #fff;
+    width:220px; 
+    height:40px; 
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .input-button button:hover{
+    background-color:rgba(38, 101, 255,0.6);
+    color: #fff;
+  }
+}
