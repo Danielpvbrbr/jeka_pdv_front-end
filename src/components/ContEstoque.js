@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input"
 import "./ContEstoque.css"
 import hamburgue from "../icones/hamburgue.png"
+import { Link } from "react-router-dom";
 
 export default class ContEstoque extends Component {
   render() {
@@ -45,7 +46,9 @@ export default class ContEstoque extends Component {
           <div className="cont-botão">
             <button className="btn-sm btn-primary">SELECIONAR TODOS</button>
             <button className="btn-sm btn-primary">DELETAR ITEM</button>
-            <button className="btn-sm btn-primary">NOVO ITEM</button>
+            <Link to={'/produtos'}>
+              <button className="btn-sm btn-primary">NOVO ITEM</button>
+            </Link>
           </div>
         </div>
       </div>

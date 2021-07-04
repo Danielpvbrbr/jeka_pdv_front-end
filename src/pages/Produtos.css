@@ -1,0 +1,16 @@
+.contain-form .form{ 
+  display:flex;
+}
+.contain-form .form .inp{ 
+  color: #fff;
+  font-size: 10.2pt;
+  margin-right: 5px;
+  justify-content: center;
+}
+.contain-form .form .inp1{ 
+  color: #fff;
+  font-size: 10.2pt;
+  width:130px;
+  margin-right: 5px;
+
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Input from "./Input"
 import "./DataButtonVenda.css"
+import { Link } from 'react-router-dom'
 export default class DataButtonVenda extends Component {
   render() {
     return (
@@ -20,7 +21,9 @@ export default class DataButtonVenda extends Component {
 
         <div className="input-button">
           <button>CANCELAR VENDA</button>
-          <button>SAIR DO P.D.V</button>
+          <Link to={'/'}>
+            <button>SAIR DO P.D.V</button>
+          </Link>
           <button>FINALIZAR VENDA</button>
         </div>
       </div>

@@ -3,10 +3,10 @@ import Input from "./Input"
 import "./ContGerenciamento.css"
 
 export default class ContGerenciamento extends Component {
-  render() {
-    return (
+  render(){
+    return(
       <div className="cont-gerencimento  border">
-        <div >
+        <div>
           <section className="col-md-12 cont-gerencimento-1">
             <div className="cont-form">
               <Input type="date" />
