@@ -36,20 +36,27 @@ export default class SubMenu extends Component {
             </li>
           </Link> 
 
-          <li>
-            <img alt="Contas a pagar" src={ContasApagar}/>
-            <p>Contas a Pagar</p>
-          </li>
-
+          <Link to={'/constasapagar'}>
+            <li>
+              <img alt="Contas a pagar" src={ContasApagar}/>
+              <p>Contas a Pagar</p>
+            </li>
+          </Link>
+          
+        <Link to={'/contasareceber'}>
           <li>
             <img alt="Contas a receber" src={ContasAreceber}/>
             <p>Contas a Receber</p>
           </li>
-
+        </Link>
+        <Link to={'/clientes'}>
           <li>
             <img alt="Clientes" src={Clientes}/>
             <p>Clientes</p>
           </li>
+        </Link>
+         
+
           <Link to={'/funcionarios'}>
             <li>
               <img alt="Funcionarios" src={Funcionarios}/>
@@ -57,10 +64,12 @@ export default class SubMenu extends Component {
             </li>
           </Link>
 
-          <li>
-            <img alt="Sair" src={Sair}/>
-            <p>Sair</p>
-          </li>
+          <Link to={'/'}>
+            <li>
+              <img alt="Sair" src={Sair}/>
+              <p>Sair</p>
+            </li>
+          </Link>
         </ul>
       </nav>
     )
