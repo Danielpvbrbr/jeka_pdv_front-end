@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Login from './Login'
 import Home from './Home'
 import Estoque from './Estoque'
@@ -15,14 +15,13 @@ import FormContasApagar from './pages/subPage/FormContasApagar'
 import ContasAreceber from './ContasAreceber'
 import FormContasReceber from './pages/subPage/FormContasReceber.'
 import Fornecedores from './pages/subPage/Fornecedores'
-import Cargo from './pages/subPage/Cargo'
-import Setor from './pages/subPage/Setor'
+import CargoSetor from './pages/subPage/CargoSetor'
 import AnaliseVenda from './pages/subPage/AnaliseVenda'
 import Devolucoes from './pages/subPage/Devolucoes'
 import Configuracao from './pages/subPage/Configuracao'
 import Suporte from './pages/subPage/Suporte'
 import Sobre from './pages/subPage/Sobre'
-
+import AreaAdm from './pages/auth/AreaAdm'
 
 export default function Routes(){
   return(
@@ -44,13 +43,13 @@ export default function Routes(){
               <Route path="/formContaReceber" component={FormContasReceber} />
 
               <Route path="/fornecedores" component={Fornecedores} />
-              <Route path="/cargo" component={Cargo} />
-              <Route path="/setor" component={Setor} />
+              <Route path="/cargosetor" component={CargoSetor} />
               <Route path="/analisevenda" component={AnaliseVenda} />
               <Route path="/devolucoes" component={Devolucoes} />
               <Route path="/configuracao" component={Configuracao} />
               <Route path="/suporte" component={Suporte} />
               <Route path="/sobre" component={Sobre} />
+              <Route path="/areadmin" component={AreaAdm} />
           </Switch>
       </BrowserRouter>
   )

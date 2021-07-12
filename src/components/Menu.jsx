@@ -15,8 +15,7 @@ export default class Menu extends Component {
              <Link to={'/formclientes'}><p>Clientes</p></Link> 
              <Link to={'/fornecedores'}><p>Fornecedores</p></Link>
              <Link to={'/funcionarios'}><p>Funcionários</p></Link>
-             <Link to={'/cargo'}><p>Cargo</p></Link>
-             <Link to={'/setor'}><p>Setores</p></Link>
+             <Link to={'/cargosetor'}><p>Setores/Cargo</p></Link>
             </div>
             |
           </li>
@@ -79,7 +78,7 @@ export default class Menu extends Component {
           </li>
 
           <li className="">
-          <Link to={'/configuracao'}><p className="text-dark">Arẽa do administrador</p></Link>
+          <Link to={'/areadmin'}><p className="text-dark">Arẽa do administrador</p></Link>
           </li>
         </ul>
      

@@ -7,7 +7,7 @@ import "../../components/Footer";
 import axios from 'axios'
 import Input from '../../components/Input'
 
-export default class Cargo extends Component {
+export default class Fornecedores extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -19,13 +19,6 @@ export default class Cargo extends Component {
     this.setState({[e.target.name] : e.target.value})
   };
 
-  componentDidMount = async () => {
-    axios.get('http://localhost:3001/api/cadastro/produtos').then(res => {
-      console.log(res)
-      console.log(res.data)
-    })
-
-  }
 
   render() {
     return(
@@ -48,36 +41,67 @@ export default class Cargo extends Component {
                     <section className="form">
 
                       <div className="mb-1 inp1">
-                        <label htmlFor="formFile" className="form-label">Código de barras</label>
+                        <label htmlFor="formFile" className="form-label">Nome / Empresa</label>
                         <Input className="form-control form-control-sm " onChange={this.handleChange} name="cod_produt" type="texto"/>
                       </div>
 
                       <div className="mb-1 inp">
-                        <label htmlFor="formFileMultiple" className="form-label">Descrição da Compra:*</label>
+                        <label htmlFor="formFileMultiple" className="form-label">E-mail:*</label>
                         <Input className="form-control form-control-sm " onChange={this.handleChange} name="descricao_produt" type="texto" />
                       </div>
 
                       <div className="mb-1 inp">
-                        <label htmlFor="formFileSm" className="form-label">Tipo de compra:*</label>
+                        <label htmlFor="formFileSm" className="form-label">Endereço:*</label>
                         <Input className="form-control form-control-sm " onChange={this.handleChange} name="forn_produt" type="date"/>
                       </div>
                     </section>
 
                     <section className="form">
                       <div className="mb-1 inp1">
-                        <label htmlFor="formFileLg" className="form-label">Valor da compra: *</label>
+                        <label htmlFor="formFileLg" className="form-label">Numero: *</label>
                         <Input className="form-control form-control-sm " onChange={this.handleChange} name="unidade_produt" type="date"/>
                       </div>
 
                       <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Local da compra(loja..):</label>
+                        <label htmlFor="formFileLg" className="form-label">CEP:</label>
                         <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="texto"/>
                       </div>
 
                       <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Status da divida:</label>
+                        <label htmlFor="formFileLg" className="form-label">CNPJ:</label>
                         <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="texto"/>
                       </div>
+
+                      <div className="mb-1 inp">
+                        <label htmlFor="formFileLg" className="form-label">Telefone:</label>
+                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="texto"/>
+                      </div>
+
+                      </section>
+
+                      <section className="form">
+                        <div className="mb-1 inp">
+                          <label htmlFor="formFileLg" className="form-label">Pais:</label>
+                          <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="texto"/>
+                        </div>
+
+                        <div className="mb-1 inp">
+                          <label htmlFor="formFileLg" className="form-label">Estado:</label>
+                          <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="texto"/>
+                        </div>
+
+                        <div className="mb-1 inp1">
+                          <label htmlFor="formFileLg" className="form-label">Cidade: *</label>
+                          <Input className="form-control form-control-sm " onChange={this.handleChange} name="unidade_produt" type="date"/>
+                        </div>
+
+                      </section>
+
+                      <section className="form">
+                        <div className="mb-1 inp">
+                          <label htmlFor="formFileLg" className="form-label">Informação adicional:</label>
+                          <textarea className="form-control" rows="4"></textarea>
+                        </div>
                       </section>
 
                       <button className="btn-sm btn-primary mr-1">Adicionar</button>

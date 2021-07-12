@@ -3,9 +3,23 @@ import Input from "./Input"
 import "./ContEstoque.css"
 import hamburgue from "../icones/hamburgue.png"
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 export default class ContEstoque extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      list_produtos: []
+    }
+  }
+  componentDidMount = async () => {
+    axios.get('http://localhost:3001/api/produtos/estoque').then(res => {
+    console.log(res.data)
+    this.setState({list_produtos : res.data})
+    })
+  }
   render() {
+    const { list_produtos } = this.state;
     return (
       <div className="cont-estoque  border">
         <div >
@@ -17,31 +31,43 @@ export default class ContEstoque extends Component {
             </div>
 
           </section>
-          <section className="cont-2 ">
-            <table className="table">
-              <thead>
-                <tr>
+          <section className="cont-2 teste">
+            <table className="table tableStoque" >
+              <thead >
+                <tr >
                   <th scope="col">Imagens</th>
                   <th scope="col">Cód.Item</th>
-                  <th scope="col">Un</th>
                   <th scope="col">Descrição do Item</th>
                   <th scope="col">Estoque</th>
+                  <th scope="col">Unidade</th>
                   <th scope="col">Preço de venda</th>
                   <th scope="col">Preço de Atacado</th>
+                  <th scope="col">Margem de lucro</th>
+                  <th scope="col">Local do produto</th>
                 </tr>
               </thead>
+   
               <tbody>
-                <tr>
-                  <td><img alt="img-produto" src={hamburgue} /></td>
-                  <td>001</td>
-                  <td>UN</td>
-                  <td>Hamburger</td>
-                  <td>2</td>
-                  <td>9,99</td>
-                  <td>0,00</td>
-                </tr>
+                {
+                list_produtos.map((produtos,i)=>
+                  <tr className="text-white" key={i}>
+                      <td><img alt="img-produto" src={hamburgue} /></td>
+                      <td>{produtos.cod_produt}</td>
+                      <td >{produtos.descricao_produt}</td>
+                      <td >{produtos.estoque_atual_produt}</td>
+                      <td >{produtos.unidade_produt}</td>
+                      <td >{produtos.preco_venda_produt}</td>
+                      <td >{produtos.preco_atacado_produt}</td>
+                      <td >{produtos.preco_atacado_produt}</td>
+                      <td >{produtos.local_produt}</td>
+                    </tr>
+                  )
+                  
+                }
+                
               </tbody>
             </table>
+            
           </section>
           <div className="cont-botão">
             <button className="btn-sm btn-primary">SELECIONAR TODOS</button>
