@@ -14,6 +14,9 @@
   margin-right: 5px;
 
 }
-#container-func{
-  height:500px;
+#container-formContas {
+  height:430px;
+}
+#container-formContas .form-check label{
+  font-size: 9pt;
 }

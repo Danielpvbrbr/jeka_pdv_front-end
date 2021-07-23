@@ -1,0 +1,354 @@
+@media (max-width: 575.98px) {
+  .cont-gerencimento {
+    margin-top: -100px;
+    background-color: #9db2ff;
+  }
+
+  .cont-form {
+    display: flex;
+    justify-content: center;
+  }
+  .cont-form label {
+    font-size: 13pt;
+    margin-right: 3px;
+    line-height: -30px;
+  }
+  .cont-form input {
+    width: 10em;
+    height: 30px;
+    margin-left: 4px;
+    font-size: 12.9pt;
+    border-radius: 2px;
+  }
+  .cont-form button {
+    font-size: 9pt;
+    margin-left: 2px;
+  }
+  .cont-gerencimento-1 {
+    background-color: #9db2ff;
+    height: 0px;
+    visibility:hidden;
+  }
+  .cont-gerencimento-1 table {
+    background-color: #4f75ff;
+  }
+  .cont-gerencimento-1 table thead th {
+    font-size: 11pt;
+  }
+  .cont-gerencimento-2 {
+    overflow: auto;
+    height: 1px;
+    visibility:hidden;
+  }
+  .cont-gerencimento-2 thead tr th {
+    font-size: 9pt;
+  }
+  .cont-gerencimento-2 thead {
+    background-color: #9db2ff;
+  }
+
+  .cont-gerencimento-2 tbody tr td{
+    font-size: 9pt;
+    color: #000;
+  }
+
+  #cont-inputs p {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs input[type="text"] {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs #total-inputs{
+    padding: 0px 10px 0px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .cont-gerencimento {
+    background-color: #9db2ff;
+  }
+  .cont-gerencimento-1 {
+    background-color: #9db2ff;
+    height: 35px;
+  }
+  .cont-form {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+  }
+  .cont-form label {
+    font-size: 13pt;
+    margin-right: 3px;
+    line-height: -30px;
+  }
+  .cont-form input {
+    width: 10em;
+    height: 30px;
+    margin-left: 4px;
+    font-size: 12.9pt;
+    border-radius: 2px;
+  }
+  .cont-form button {
+    font-size: 9pt;
+    margin-left: 2px;
+  }
+  .cont-gerencimento-1 table {
+    background-color: #4f75ff;
+  }
+  .cont-gerencimento-1 table thead th {
+    font-size: 11pt;
+  }
+  .cont-gerencimento-2 {
+    overflow: auto;
+    height: 280px;
+ 
+  }
+  .cont-gerencimento-2 thead tr th {
+    font-size: 9pt;
+  }
+  .cont-gerencimento-2 thead {
+    background-color: #9db2ff;
+  }
+
+  .cont-gerencimento-2 tbody tr td{
+    font-size: 9pt;
+    color: #000;
+  }
+
+  #cont-inputs p {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs input[type="text"] {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs #total-inputs{
+    padding: 0px 10px 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cont-gerencimento {
+    background-color: #9db2ff;
+  }
+  .cont-gerencimento-1 {
+    background-color: #9db2ff;
+    height: 40px;
+  }
+  .cont-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .cont-form label {
+    font-size: 13pt;
+    margin-right: 3px;
+    line-height: -30px;
+  }
+  .cont-form input {
+    width: 10em;
+    height: 30px;
+    margin-left: 4px;
+    font-size: 12.9pt;
+    border-radius: 2px;
+  }
+  .cont-form button {
+    font-size: 9pt;
+    margin-left: 2px;
+  }
+  .cont-gerencimento-1 table {
+    background-color: #4f75ff;
+  }
+  .cont-gerencimento-1 table thead th {
+    font-size: 10pt;
+  }
+  .cont-gerencimento-2 {
+    overflow: auto;
+    height: 280px;
+ 
+  }
+  .cont-gerencimento-2 thead tr th {
+    font-size: 6pt;
+  }
+  .cont-gerencimento-2 thead {
+    background-color: #9db2ff;
+  }
+
+  .cont-gerencimento-2 tbody tr td{
+    font-size: 9pt;
+    color: #000;
+  }
+
+  #cont-inputs p {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    font-size: 6pt;
+  }
+  #cont-inputs input[type="text"] {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs #total-inputs{
+    padding: 0px 10px 0px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cont-gerencimento {
+    background-color: #9db2ff;
+  }
+  .cont-gerencimento-1 {
+    background-color: #9db2ff;
+    height: 35px;
+  }
+  .cont-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  .cont-form label {
+    font-size: 13pt;
+    margin-right: 3px;
+    line-height: -30px;
+  }
+  .cont-form input {
+    width: 10em;
+    height: 30px;
+    margin-left: 4px;
+    font-size: 12.9pt;
+    border-radius: 2px;
+  }
+  .cont-form button {
+    font-size: 9pt;
+    margin-left: 2px;
+  }
+  .cont-gerencimento-1 table {
+    background-color: #4f75ff;
+  }
+  .cont-gerencimento-1 table thead th {
+    font-size: 11pt;
+  }
+  .cont-gerencimento-2 {
+    overflow: auto;
+    height: 270px;
+ 
+  }
+  .cont-gerencimento-2 thead tr th {
+    font-size: 9pt;
+  }
+  .cont-gerencimento-2 thead {
+    background-color: #9db2ff;
+  }
+
+  .cont-gerencimento-2 tbody tr td{
+    font-size: 9pt;
+    color: #000;
+  }
+
+  #cont-inputs p {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    font-size: 7pt;
+  }
+  #cont-inputs input[type="text"] {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs #total-inputs{
+    padding: 0px 10px 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cont-gerencimento {
+    background-color: #9db2ff;
+  }
+  .cont-gerencimento-1 {
+    background-color: #9db2ff;
+    height: 40px;
+  }
+  .cont-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .cont-form label {
+    font-size: 13pt;
+    margin-right: 3px;
+    line-height: -30px;
+  }
+  .cont-form input {
+    /* width: 10em;
+    height: 30px;
+    margin-left: 4px;
+    font-size: 12.9pt;
+    border-radius: 2px; */
+  }
+  .cont-form button {
+    font-size: 9pt;
+    margin-left: 2px;
+  }
+  .cont-gerencimento-1 table {
+    background-color: #4f75ff;
+  }
+  .cont-gerencimento-1 table thead th {
+    font-size: 11pt;
+  }
+  .cont-gerencimento-2 {
+    overflow: auto;
+    height:299px;
+ 
+  }
+  .cont-gerencimento-2 thead tr th {
+    font-size: 9pt;
+  }
+  .cont-gerencimento-2 thead {
+    background-color: #9db2ff;
+  }
+
+  .cont-gerencimento-2 tbody tr td{
+    font-size: 9pt;
+    color: #000;
+  }
+
+  #cont-inputs p {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs input[type="text"] {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-size: 8pt;
+  }
+  #cont-inputs #total-inputs{
+    padding: 0px 10px 0px;
+  }
+
+}

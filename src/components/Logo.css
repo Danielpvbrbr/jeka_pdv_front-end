@@ -2,10 +2,12 @@
   .logo_centro{
     display: flex;
     justify-content: center;
-    margin:2em;
+    margin-bottom: 0rem;
+    visibility:hidden;
   }
   .logo_centro img{
-    width:170px;
+    width:0px;
+    visibility:hidden;
   }
 }
 
@@ -13,10 +15,12 @@
   .logo_centro{
     display: flex;
     justify-content: center;
-    margin:4em;
+    margin-top: -5rem;
+    margin-bottom: 2rem;
   }
   .logo_centro img{
-    width:200px;
+    width:120px;
+    opacity: 0.8;
   }
 }
 
@@ -27,7 +31,8 @@
     margin:3em;
   }
   .logo_centro img{
-    width:200px;
+    width:120px;
+    opacity: 0.8;
   }
   
 }
@@ -39,7 +44,8 @@
     margin:3em;
   }
   .logo_centro img{
-    width:200px;
+    width:140px;
+    opacity: 0.8;
   }
 }
 
@@ -47,10 +53,10 @@
   .logo_centro{
     display: flex;
     justify-content: center;
-    margin:3em;
+    margin-bottom:3em;
   }
   .logo_centro img{
-    width:200px;
-    opacity: 0.6;
+    width:150px;
+    opacity: 0.8;
   }
 }

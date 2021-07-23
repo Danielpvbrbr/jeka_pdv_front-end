@@ -1,0 +1,17 @@
+#contFunction{
+  height:370px;
+  background-color:#9db2ff;
+}
+#contFunction #contTableFunction{
+  height:320px;
+  overflow:auto;
+}
+#contFunction #tableTitulo tr th{
+  font-size: 9pt;
+}
+#contFunction #tableCampo tr td{
+  font-size: 9pt;
+}
+#contFunction #contButton{
+  background-color:red;
+}

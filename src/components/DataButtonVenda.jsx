@@ -21,7 +21,7 @@ export default class DataButtonVenda extends Component {
 
         <div className="input-button">
           <button>CANCELAR VENDA</button>
-          <Link to={'/'}>
+          <Link to={'/home'}>
             <button>SAIR DO P.D.V</button>
           </Link>
           <button>FINALIZAR VENDA</button>

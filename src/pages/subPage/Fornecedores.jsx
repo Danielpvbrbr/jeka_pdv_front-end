@@ -4,7 +4,7 @@ import SubMenu from '../../components/SubMenu';
 import "../../Home.css"
 import "../subPage/FormContasReceber.css"
 import "../../components/Footer";
-import axios from 'axios'
+// import axios from 'axios'
 import Input from '../../components/Input'
 
 export default class Fornecedores extends Component {

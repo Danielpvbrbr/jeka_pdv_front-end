@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Menu from './components/Menu'
 // import Footer from './components/Footer'
 import SubMenu from './components/SubMenu'
-import ContEstoque from './components/ContEstoque'
+import ListEstoque from './pages/ListEstoque'
 import "./Home.css"
 import "./components/Menu.css"
 
@@ -22,7 +22,7 @@ export default class Estoque extends Component {
                 </div>
 
                 <div className="mb-2">
-                  <ContEstoque/>
+                  <ListEstoque/>
                 </div>
               </section>
            

@@ -1,0 +1,14 @@
+#contAccountReceive{
+  height:370px;
+  background-color:#9db2ff;
+}
+#contAccountReceive #contFunction{
+  height:320px;
+  overflow:auto;
+}
+#contAccountReceive #tableTitulo tr th{
+  font-size: 9pt;
+}
+#contAccountReceive #tableCampo tr td{
+  font-size: 9pt;
+}

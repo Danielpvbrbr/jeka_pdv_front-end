@@ -5,60 +5,26 @@ import "./ExtratoTotal.css"
 export default class ExtratoTotal extends Component {
   render() {
     return (
-      <div className="cont-meio">
-        <div className="border cont-extrato">
-          <p>EXTRATO [CONTAS A PAGAR]</p>
-          <div className="bg-dager cont-input">
-
-            <div className="input-1" >
-              <legend>Vencimentas</legend>
-              <Input type="text" placeholder="R$ 0,00" id="input-cor" readOnly="readOnly" />
+      <div id="contain-extrato" >
+        <form className="container d-flex justify-content-center">
+          <div className="row">
+            <div className="col border border-success m-1 p-1">
+              <p className="m-0 p-1 bg-success">EXTRATO [CONTAS A PAGAR]</p>
+              <legend className="m-1">Vencimentas</legend>
+              <Input type="text" className="form-control form-control-sm mb-0" placeholder="R$ 0,00" readOnly />
+              <legend className="m-1">Amanhâ</legend>
+              <Input type="text" className="form-control form-control-sm" placeholder="R$ 0,00" readOnly />
             </div>
 
-            <div className="input-1" >
-              <legend>Amanhâ</legend>
-              <Input type="text" placeholder="R$ 0,00" readOnly="readOnly" />
+            <div className="col border border-success m-1 p-1">
+              <p className="m-0 p-1 bg-success">EXTRATO [CONTAS A RECEBER]</p>
+              <legend className="m-1">Hojé</legend>
+              <Input type="text" className="form-control form-control-sm mb-0" placeholder="R$ 0,00" readOnly />
+              <legend className="m-1">Depois de Amanhâ</legend>
+              <Input type="text" className="form-control form-control-sm" placeholder="R$ 0,00" readOnly />
             </div>
-
-            <div className="input-1" >
-              <legend>Hojé</legend>
-              <Input type="text" placeholder="R$ 0,00" readOnly="readOnly" />
-            </div>
-
-            <div className="input-1" >
-              <legend>Depois de Amanhâ</legend>
-              <Input type="text" placeholder="R$ 0,00" readOnly="readOnly" />
-            </div>
-
           </div>
-        </div>
-        
-        <div className="border cont-extrato">
-          <p>EXTRATO [CONTAS A RECEBER]</p>
-          <div className="bg-dager cont-input">
-
-            <div className="input-1" >
-              <legend>Vencimentas</legend>
-              <Input type="text" placeholder="R$ 0,00" id="input-cor" readOnly="readOnly" />
-            </div>
-
-            <div className="input-1" >
-              <legend>Amanhâ</legend>
-              <Input type="text" placeholder="R$ 0,00" readOnly="readOnly" />
-            </div>
-
-            <div className="input-1" >
-              <legend>Hojé</legend>
-              <Input type="text" placeholder="R$ 0,00" readOnly="readOnly" />
-            </div>
-
-            <div className="input-1" >
-              <legend>Depois de Amanhâ</legend>
-              <Input type="text" placeholder="R$ 0,00" readOnly="readOnly" />
-            </div>
-
-          </div>
-        </div>
+        </form>
       </div>
     )
   }

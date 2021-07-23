@@ -1,0 +1,14 @@
+#contContaApagar{
+  height:370px;
+  background-color:#9db2ff;
+}
+#contContaApagar #ContaApagar{
+  height:320px;
+  overflow:auto;
+}
+#contContaApagar #tableTitulo tr th{
+  font-size: 9pt;
+}
+#contContaApagar #tableCampo tr td{
+  font-size: 9pt;
+}

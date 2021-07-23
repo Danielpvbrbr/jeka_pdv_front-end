@@ -11,7 +11,7 @@ export default class Configuracao extends Component {
   constructor(props){
     super(props);
     this.state = {
-     
+      list_produtos:[]
     }
   };
 
@@ -65,62 +65,27 @@ export default class Configuracao extends Component {
                   <td>
                     <div Style="width:100%; height:100px; overflow:auto;">
                       <table width="100%" >
-                        
-                      <tr>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                        </tr>
+                      {
+                        list_produtos.map((produtos,i)=>
+                          <tr className="text-white" key={i}>
+                              {/* <td><img alt="img-produto" src={hamburgue} /></td> */}
+                              <td>{produtos.cod_produt}</td>
+                              <td>dadadda</td>
+                              <td>fsesefsefsf</td>
+                              <td>fsefsfsfsfef</td>
+                              <td>dada</td>
+                              <td >{produtos.descricao_produt}</td>
+                              <td >{produtos.estoque_atual_produt}</td>
+                              <td >{produtos.unidade_produt}</td>
+                              <td >{produtos.preco_venda_produt}</td>
+                              <td >{produtos.preco_atacado_produt}</td>
+                              <td >{produtos.preco_atacado_produt}</td>
+                              <td >{produtos.local_produt}</td>
+                            </tr>
+                          )
+                          
+                        }
 
-                        <tr>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                        </tr>
-
-                        <tr>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                        </tr>
-
-                        <tr>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                        </tr>
-
-                        <tr>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                          <td>new item</td>
-                        </tr>
-                       
                       </table>  
                     </div>
                   </td>

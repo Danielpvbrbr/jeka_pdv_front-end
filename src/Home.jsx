@@ -20,29 +20,9 @@ export default class Home extends Component {
 
   };
 
-  // handleChange = async (e) => {
-  //   this.setState({ [e.target.name]: e.target.value })
-  // }
-
-  // handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const { nome, senha, email } = this.state
-  //   await axios.post('http://localhost:3001/api/cadastrar',
-  //     {
-  //       username: nome,
-  //       email: email,
-  //       senha: senha,
-  //     })
-  //     .then(res => {
-  //       console.log(res);
-  //       alert(res.data)
-  //       window.location.reload();
-  //     })
-  // }
-
   render() {
     return (
-      <div className="cont-principal container-fluid">
+      <div  className="cont-principal container-fluid">
         <div className="row">
           <header className="col-md-12 cont-menu">
             <Menu />

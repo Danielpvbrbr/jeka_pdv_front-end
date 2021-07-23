@@ -5,7 +5,7 @@ import Home from './Home'
 import Estoque from './Estoque'
 import Venda from './Venda'
 import Gerencimento from './Gerencimento'
-import Produtos from './pages/Produtos'
+import FormProdutos from './pages/./subPage/FormProdutos'
 import FormFuncionarios from './pages/subPage/FormFuncionarios'
 import Funcionarios from './Funcionarios'
 import Clientes from './Clientes'
@@ -32,7 +32,7 @@ export default function Routes(){
               <Route path="/estoque" component={Estoque} />
               <Route path="/venda" component={Venda} />
               <Route path="/gerencimento" component={Gerencimento} />
-              <Route path="/produtos" component={Produtos} />
+              <Route path="/formprodutos" component={FormProdutos} />
               <Route path="/formfuncionarios" component={FormFuncionarios} />
               <Route path="/funcionarios" component={Funcionarios} />
               <Route path="/clientes" component={Clientes} />

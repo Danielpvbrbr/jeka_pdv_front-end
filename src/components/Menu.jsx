@@ -1,87 +1,57 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css"
+import { Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
 export default class Menu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
   render() {
     return (
-      <div>
-        
-        <ul>
-          <li className="dropdown">
-          <p className="dropbtn">Cadastro</p>
-            <div className="dropdown-content">
-             <Link to={'/produtos'}><p>Produtos</p></Link> 
-             <Link to={'/formclientes'}><p>Clientes</p></Link> 
-             <Link to={'/fornecedores'}><p>Fornecedores</p></Link>
-             <Link to={'/funcionarios'}><p>Funcionários</p></Link>
-             <Link to={'/cargosetor'}><p>Setores/Cargo</p></Link>
-            </div>
-            |
-          </li>
+      <div id="menu-principal">
+        <Navbar bg="primary" expand="lg">
+          <Navbar.Brand><h3>Jaca</h3></Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <NavDropdown title="Cadastro" id="basic-nav-dropdown">
+                <Link to={'/produtos'}><NavDropdown.Item >Produtos</NavDropdown.Item></Link>
+                <Link to={'/formclientes'}><NavDropdown.Item >Clientes</NavDropdown.Item></Link>
+                <Link to={'/fornecedores'}><NavDropdown.Item >Fornecedores</NavDropdown.Item></Link>
+                <Link to={'/funcionarios'}><NavDropdown.Item >Funcionários</NavDropdown.Item></Link>
+                <Link to={'/cargosetor'}><NavDropdown.Item >Setores/Cargo</NavDropdown.Item></Link>
+              </NavDropdown>
 
-          <li className="dropdown">
-          <p className="dropbtn">Estoque</p>
-          <div className="dropdown-content">
-          <Link to={'/estoque'}><p>Gerenciar Estoque</p></Link>
-          <Link to={'/estoque'}><p>Tabela de Preço</p></Link>
-            </div>
-            |
-          </li>
+              <NavDropdown title="Estoque" id="basic-nav-dropdown">
+                <Link to={'/produtos'}><NavDropdown.Item >Gerenciar Estoque</NavDropdown.Item></Link>
+                <Link to={'/formclientes'}><NavDropdown.Item >Tabela de Preço</NavDropdown.Item></Link>
+              </NavDropdown>
 
-          <li className="dropdown">
-          <p className="dropbtn">Vendas</p>
-          <div className="dropdown-content">
-          <Link to={'/venda'}><p>Vender(P.D.V)</p></Link>
-          <Link to={'/gerencimento'}><p>Gerenciamento de Vendas</p></Link>
-          <Link to={'/analisevenda'}><p>Análise de Vendas</p></Link>
-          <Link to={'/devolucoes'}><p>Listagem de Devoluções</p></Link>
-            </div>
-            |
-          </li>
+              <NavDropdown title="Vendas" id="basic-nav-dropdown">
+                <Link to={'/produtos'}><NavDropdown.Item >Vender(P.D.V)</NavDropdown.Item></Link>
+                <Link to={'/formclientes'}><NavDropdown.Item >Gerenciamento de Vendas</NavDropdown.Item></Link>
+                <Link to={'/fornecedores'}><NavDropdown.Item >Análise de Vendas</NavDropdown.Item></Link>
+                <Link to={'/funcionarios'}><NavDropdown.Item >Listagem de Devoluções</NavDropdown.Item></Link>
+              </NavDropdown>
 
-          <li className="dropdown">
-          <p className="dropbtn">Financeiro</p>
-          <div className="dropdown-content">
-              <p>Contas a pagar</p>
-              <p>Contas a receber</p>
-            </div>
-            |
-          </li>
+              <NavDropdown title="Financeiro" id="basic-nav-dropdown">
+                <Link to={'/formclientes'}><NavDropdown.Item >Contas a pagar</NavDropdown.Item></Link>
+                <Link to={'/fornecedores'}><NavDropdown.Item >Contas a receber</NavDropdown.Item></Link>
+              </NavDropdown>
 
-          <li className="dropdown">
-          <p className="dropbtn">Orden de serviço</p>
-          <div className="dropdown-content">
-              <p>Gerar orden de serviço</p>
-            </div>
-            |
-          </li>
-          <li className="dropdown">
-          <p className="dropbtn">Relatório</p>
-          <div className="dropdown-content">
-              <p>Relatório de vendas no dia</p>
-              <p>Relatório de vendas no mẽs</p>
-              <p>Relatório de vendas no Ano</p>
-            </div>
-            |
-          </li>
-          <li className="dropdown">
-          <Link to={'/configuracao'}><p className="dropbtn">Cofigurações</p></Link>
-            |
-            </li>
-          <li className="dropdown">
-          <Link to={'/configuracao'}><p className="dropbtn">Suporte</p></Link>
-            |
-          </li>
-          <li className="dropdown">
-          <Link to={'/configuracao'}><p className="dropbtn">Sobre</p></Link>
-          </li>
+              <Link className="nav-link" to={'/areadmin'}>Relatório</Link>
+              <Link className="nav-link" to={'/areadmin'}>Suporte</Link>
+              <Link className="nav-link" to={'/configuracao'}>Cofigurações</Link>
+              <Link className="nav-link" to={'/areadmin'}>Painel Admin</Link>
+            </Nav>
+          </Navbar.Collapse>
 
-          <li className="">
-          <Link to={'/areadmin'}><p className="text-dark">Arẽa do administrador</p></Link>
-          </li>
-        </ul>
-     
+        </Navbar>
+
       </div>
     )
   }

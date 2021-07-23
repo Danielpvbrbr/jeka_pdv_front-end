@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Menu from './components/Menu'
 // import Footer from './components/Footer'
 import SubMenu from './components/SubMenu'
-import ContGerenciamento from './components/ContGerenciamento'
+import ListGerenciamento from './pages/ListGerenciamento'
 import "./Home.css"
 import "./components/Menu.css"
 
@@ -22,7 +22,7 @@ export default class Gerencimento extends Component {
               </div>
 
               <div className="mb-2">
-                <ContGerenciamento />
+                <ListGerenciamento />
               </div>
             </section>
 
