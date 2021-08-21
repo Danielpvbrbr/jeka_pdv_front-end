@@ -1,10 +1,30 @@
 import React, { Component } from "react";
-import Input from "../components/Input"
+import Input from "../components/Input";
 import { Link } from "react-router-dom";
-import "./ListFuncionarios.css"
+import "./ListFuncionarios.css";
+import axios from 'axios';
 
 export default class ListFuncionarios extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: []
+    }
+  };
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  componentDidMount = async (e) => {
+    axios.get('http://localhost:3001/api/funcionario').then(res => {
+      // console.log(res.data);
+      this.setState({ list: res.data })
+    });
+  };
+
   render() {
+    const { list } = this.state;
     return (
       <div id="contFunction" className="border border-success">
         <div >
@@ -19,22 +39,24 @@ export default class ListFuncionarios extends Component {
             <table className="table table-bordered table-success table-striped ">
               <thead id="tableTitulo" className="thead-dark">
                 <tr>
+                <th scope="col">#</th>
+                  <th scope="col">Código</th>
                   <th scope="col">Nome do Funcionarios</th>
                   <th scope="col">Cargo</th>
                 </tr>
               </thead>
 
               <tbody id="tableCampo">
-                <tr>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                </tr>
-
-                <tr>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                </tr>
-
+                {
+                  list.map((func, i) =>
+                    <tr key={i}>
+                      <td> <Input id="check" type="checkbox" /></td>
+                      <td>{func.cod_func}</td>
+                      <td>{func.nome_func}</td>
+                      <td>{func.cargo_func}</td>
+                    </tr>
+                  )
+                }
               </tbody>
             </table>
           </section>

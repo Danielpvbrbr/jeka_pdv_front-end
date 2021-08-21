@@ -1,19 +1,142 @@
-.contain-form .form{ 
-  display:flex;
+@media (max-width: 575.98px) {
+  #container-formContas {
+    height: 550px !important;
+    margin-top: -100px !important;
+    position: relative;
+    overflow: auto;
+  }
+  .contain-form .form {
+    display: flex;
+  }
+  .contain-form label {
+    color: #fff;
+    font-size: 7.6pt;
+  }
+  .contain-form .form {
+    display: block;
+  }
+  #container-func {
+    height: 700px;
+  }
+  #tableClients {
+    height: 100px;
+    overflow: auto;
+  }
 }
-.contain-form .form .inp{ 
-  color: #fff;
-  font-size: 9pt;
-  margin-right: 5px;
-  justify-content: center;
-}
-.contain-form .form .inp1{ 
-  color: #fff;
-  font-size: 9pt;
-  width:130px;
-  margin-right: 5px;
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #cont-principal{
+    overflow: auto;
+    height:500px;
+  } 
+  #container-formContas {
+    height: 550px !important;
+    margin-top: -100px !important;
+    position: relative;
+    overflow: auto;
+  }
+  .contain-form .form {
+    display: block;
+  }
+  .contain-form label {
+    color: #fff;
+    font-size: 7.6pt;
+  }
+  .contain-form .form {
+    display: block;
+  }
+  #cont-check{
+    display: inline;
+    margin-left: 2px;
+  }
+  #container-func {
+    height: 700px;
+  }
+  #tableClients {
+    height: 100px;
+    overflow: auto;
+  }
 }
-#container-func{
-  height:500px;
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .contain-form .form {
+    display: flex;
+  }
+  .contain-form label {
+    color: #fff;
+    font-size: 7.6pt;
+  }
+  .contain-form .form .inp {
+    margin-right: 5px;
+    justify-content: center;
+  }
+  #cont-check {
+    padding-top: 20px;
+  }
+  #cont-check legend {
+    font-size: 7pt;
+  }
+  #container-func {
+    height: 500px;
+  }
+  #tableClients {
+    height: 170px;
+    overflow: auto;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contain-form .form {
+    display: flex;
+  }
+  .contain-form label {
+    color: #fff;
+    font-size: 9pt;
+  }
+  .contain-form .form .inp {
+    margin-right: 5px;
+    justify-content: center;
+  }
+  #cont-check {
+    padding-top: 20px;
+  }
+  #cont-check legend {
+    font-size: 9pt;
+  }
+  #container-func {
+    height: 500px;
+  }
+  #tableClients {
+    height: 170px;
+    overflow: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  #container-formContas {
+    display: flex;
+    justify-content: center;
+    height: 410px !important;
+  }
+  .contain-form .form {
+    display: flex;
+  }
+  .contain-form label {
+    color: #fff;
+    font-size: 9pt;
+  }
+  .contain-form .form .inp {
+    margin-right: 5px;
+    justify-content: center;
+  }
+  #cont-check {
+    padding-top: 20px;
+  }
+  #container-func {
+    height: 500px;
+  }
+  #tableClients {
+    height: 170px;
+    overflow: auto;
+  }
 }

@@ -14,7 +14,6 @@ export default class ListGerenciamento extends Component {
               <Input type="search" className="form-control form-control-sm w-25 m-1" placeholder="Digite o n° da conta, ou código conta" />
               <button className="btn-sm btn-primary m-1">Buscar</button>
             </div>
-
           </section>
           <section className="cont-gerencimento-2">
             <table className="table table-bordered table-success table-striped">

@@ -13,13 +13,7 @@
     margin-right: 3px;
     line-height: -30px;
   }
-  .cont-form input {
-    width: 10em;
-    height: 30px;
-    margin-left: 4px;
-    font-size: 12.9pt;
-    border-radius: 2px;
-  }
+
   .cont-form button {
     font-size: 9pt;
     margin-left: 2px;
@@ -89,13 +83,6 @@
     margin-right: 3px;
     line-height: -30px;
   }
-  .cont-form input {
-    width: 10em;
-    height: 30px;
-    margin-left: 4px;
-    font-size: 12.9pt;
-    border-radius: 2px;
-  }
   .cont-form button {
     font-size: 9pt;
     margin-left: 2px;
@@ -128,7 +115,7 @@
     text-align: center;
     font-weight: 600;
     text-align: center;
-    font-size: 8pt;
+    font-size: 5pt;
   }
   #cont-inputs input[type="text"] {
     color: #fff;
@@ -160,13 +147,7 @@
     margin-right: 3px;
     line-height: -30px;
   }
-  .cont-form input {
-    width: 10em;
-    height: 30px;
-    margin-left: 4px;
-    font-size: 12.9pt;
-    border-radius: 2px;
-  }
+
   .cont-form button {
     font-size: 9pt;
     margin-left: 2px;
@@ -198,7 +179,7 @@
     color: #fff;
     text-align: center;
     font-weight: 600;
-    font-size: 6pt;
+    font-size: 5pt;
   }
   #cont-inputs input[type="text"] {
     color: #fff;
@@ -217,7 +198,7 @@
   }
   .cont-gerencimento-1 {
     background-color: #9db2ff;
-    height: 35px;
+    height: 40px;
   }
   .cont-form {
     display: flex;
@@ -229,13 +210,7 @@
     margin-right: 3px;
     line-height: -30px;
   }
-  .cont-form input {
-    width: 10em;
-    height: 30px;
-    margin-left: 4px;
-    font-size: 12.9pt;
-    border-radius: 2px;
-  }
+ 
   .cont-form button {
     font-size: 9pt;
     margin-left: 2px;
@@ -287,7 +262,7 @@
   }
   .cont-gerencimento-1 {
     background-color: #9db2ff;
-    height: 40px;
+    height: 45px;
   }
   .cont-form {
     display: flex;
@@ -299,13 +274,7 @@
     margin-right: 3px;
     line-height: -30px;
   }
-  .cont-form input {
-    /* width: 10em;
-    height: 30px;
-    margin-left: 4px;
-    font-size: 12.9pt;
-    border-radius: 2px; */
-  }
+
   .cont-form button {
     font-size: 9pt;
     margin-left: 2px;

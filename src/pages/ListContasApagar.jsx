@@ -2,9 +2,26 @@ import React, { Component } from "react";
 import Input from "../components/Input"
 import { Link } from "react-router-dom";
 import "./ListContasApagar.css"
+import axios from 'axios';
 
 export default class ListContasApagar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lancamento: []
+    }
+  };
+
+  componentDidMount = async () => {
+    axios.get('http://localhost:3001/api/conta/pagamentos').then(res => {
+      // console.log(res)
+      console.log(res.data)
+      this.setState({ lancamento: res.data })
+    })
+
+  }
   render() {
+    const { lancamento } = this.state;
     return (
       <div id="contContaApagar" className="border border-success">
         <div >
@@ -19,6 +36,7 @@ export default class ListContasApagar extends Component {
             <table className="table table-bordered table-success table-striped ">
               <thead id="tableTitulo" className="thead-dark sticky-top">
                 <tr >
+                <th scope="col">#</th>
                   <th scope="col">Cód.Conta</th>
                   <th scope="col">Fornecedor / Prestadora</th>
                   <th scope="col">N°.Documento</th>
@@ -31,90 +49,21 @@ export default class ListContasApagar extends Component {
               </thead>
 
               <tbody id="tableCampo">
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>68958</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                  <td>5</td>
-                  <td>#</td>
-                </tr>
+                {
+                  lancamento.map((list, i) =>
+                    <tr key={i}>
+                      <td> <Input id="check" type="checkbox"/></td>
+                      <td>000{i + 1}</td>
+                      <td>N° {list.numero_doc}</td>
+                      <td>{list.descricao}</td>
+                      <td>{list.data_emissao}</td>
+                      <td> {list.data_vencimento}</td>
+                      <td>R$: {list.valor_conta}</td>
+                      <td>{list.numero_parcelas}</td>
+                      <td>{list.origem}</td>
+                    </tr>
+                  )
+                }
               </tbody>
             </table>
           </section>

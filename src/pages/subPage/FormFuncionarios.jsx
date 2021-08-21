@@ -6,58 +6,80 @@ import "../subPage/FormFuncionarios.css"
 import "../../components/Footer";
 import axios from 'axios'
 import Input from '../../components/Input'
-import { Link } from 'react-router-dom';
 
 export default class FormFuncionarios extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cod_func: '',
+      cod_func: '0001',
       nome_func: '',
       sobrenome_func: '',
       nascimento_func: '',
-      data_cadastro: '',
       CPF_func: '',
       celular_func: '',
       salario_func: '',
-      cargo_func: '',
       dia_pagamento_func: '',
       data_admissao_func: '',
       senha_operador_func: '',
-
+      email_func: ''
     }
   };
-  getTypeUsers = (e) => {
 
-  }
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
-    this.getTypeUsers()
   };
 
-  handleSubmit = (e) => {
+  TypeFunc = () => {
+    const select = document.getElementById('tipo');
+    const option = select.options[select.selectedIndex];
+    const tipo_func = option.text;
+    return tipo_func
+  };
 
+  cargo = () => {
+    const select = document.getElementById('cargo');
+    const option = select.options[select.selectedIndex];
+    const cargo_func = option.text;
+    return cargo_func
+  };
+
+  checked = () => {
+    const check = document.querySelector('.check');
+    const acesso_pdv = check.checked === true ? 'true' : 'false';
+    return acesso_pdv
+  };
+
+  zeroAEsquerda = (num) => {
+    return num >= 10 ? num : `0${num}`;
+  };
+
+  formataData = (data) => {
+    const dia = this.zeroAEsquerda(data.getDate());
+    const mes = this.zeroAEsquerda(data.getMonth() + 1);
+    const ano = this.zeroAEsquerda(data.getFullYear());
+    return `${ano}-${mes}-${dia}`;
+  };
+
+  handleSubmit = async (e) => {
+    const cargo_func = this.cargo();
+    const tipo_func = this.TypeFunc();
+    const acesso_pdv = this.checked();
+
+    const data = new Date();
+    const data_cadastro = this.formataData(data);
     const {
       cod_func,
       nome_func,
       sobrenome_func,
       nascimento_func,
-      data_cadastro,
       CPF_func,
       celular_func,
       salario_func,
-      cargo_func,
       dia_pagamento_func,
       data_admissao_func,
       senha_operador_func,
+      email_func
     } = this.state;
-
-    const check = document.querySelector('.checke');
-    const acesso_pdv = check.checked === true ? 'true' : 'false';
-
-    const select = document.getElementById('tipo_de_user');
-    const option = select.options[select.selectedIndex];
-    const tipo_func = option.text;
 
     axios.post('http://localhost:3001/api/registro/funcionario', {
       cod_func,
@@ -74,18 +96,19 @@ export default class FormFuncionarios extends Component {
       acesso_pdv,
       senha_operador_func,
       tipo_func,
-    }).then(res => {
+      email_func
 
-      console.log(res.data)
+    }).then(res => {
+      alert('Cadastro realizado com sucesso!')
+      window.location.replace('/formfuncionarios')
     })
 
     e.preventDefault()
   }
 
   render() {
+
     return (
-
-
       <div className="cont-principal container-fluid">
         <div className="row">
           <header className="col-md-12 cont-menu">
@@ -93,197 +116,181 @@ export default class FormFuncionarios extends Component {
           </header>
 
           <div className="col-md-12 ">
-            <section className="container ">
+            <form className="container ">
               <div>
                 <SubMenu />
               </div>
 
               <section id="container-formContas" className="container p-0 m-0  border border-dark">
 
-                <form onSubmit={this.handleSubmit} className=" row m-2 mb-3 contain-form ">
+                <section onSubmit={this.handleSubmit} className=" row m-2 mb-3 contain-form ">
 
                   <div className="col-md-12">
                     <section className="form">
-
-                      <div className="mb-1 inp1">
-                        <label htmlFor="formFile" className="form-label">Código da cliente:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="cod_produt" type="text" />
+                      <div className="mb-1 inp">
+                        <label htmlFor="formFileMultiple" className="form-label">Nome:</label>
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="nome_func"
+                          type="text"
+                          required
+                        />
                       </div>
 
                       <div className="mb-1 inp">
-                        <label htmlFor="formFileMultiple" className="form-label">Nome do clientes:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="descricao_produt" type="text" />
+                        <label htmlFor="formFileMultiple" className="form-label">Sobrenome:</label>
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="sobrenome_func" type="text"
+                          required />
                       </div>
 
                       <div className="mb-1 inp">
                         <label htmlFor="formFileSm" className="form-label">Data de nascimento:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="forn_produt" type="date" />
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="nascimento_func"
+                          type="date"
+                          required
+                        />
+                      </div>
+                      <div className="mb-1 inp">
+                        <label htmlFor="formFileLg" className="form-label">E-mail:</label>
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="email_func"
+                          type="text"
+                          required
+                        />
+                      </div>
+                    </section>
+
+                    <section className="form">
+
+                      <div className="m-1 form-group">
+                        <label htmlFor="formFileSm" className="form-label mb-0">Cargo: *</label>
+                        <select id="cargo" className="form-control form-control-sm">
+                          <option className="Caixa" value="caixa">Operador de caixa</option>
+                          <option className="Gerente" value="gerente">supervisor de venda</option>
+                          <option className="Supervisor" value="supervisor">anlista de dados</option>
+                        </select>
+                      </div>
+
+                      <div className="mb-1 inp">
+                        <label htmlFor="formFileLg" className="form-label">CPF: *</label>
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="CPF_func"
+                          type="number" 
+                          required
+                        />
                       </div>
 
                       <div className="mb-1 inp1">
-                        <label htmlFor="formFileLg" className="form-label">Endereço: </label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="unidade_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">N°:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Bairro:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                    </section>
-
-                    <section className="form">
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Cidade:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">N°.Parcela:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Cep:</label>
-                        <Input className="form-control form-control-sm" onChange={this.handleChange} name="local_produt" type="text" disabled />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">UF:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">CPF:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">CPF:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-                    </section>
-
-                    <section className="form">
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">RG:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
                         <label htmlFor="formFileLg" className="form-label">Telefone DDD:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="celular_func"
+                          type="number"
+                          required
+                        />
+                      </div>
+
+                      <div className="mb-1 inp1">
+                        <label htmlFor="formFileLg" className="form-label">Dia de pagamento:</label>
+                        <Input
+                          className="form-control form-control-sm"
+                          onChange={this.handleChange}
+                          name="dia_pagamento_func"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </section>
+
+                    <section className="form">
+
+
+                      <div className="mb-1 inp1">
+                        <label htmlFor="formFileLg" className="form-label">Salário:</label>
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="salario_func"
+                          type="number"
+                          required
+                        />
                       </div>
 
                       <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Nome fiador:</label>
-                        <Input className="form-control form-control-sm" onChange={this.handleChange} name="local_produt" type="text" disabled />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Prazo(Dia):</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">E-mail:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
-                      </div>
-
-                      <div className="mb-1 inp">
-                        <label htmlFor="formFileLg" className="form-label">Observações:</label>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="text" />
+                        <label htmlFor="formFileLg" className="form-label">Data de admissão:</label>
+                        <Input
+                          className="form-control form-control-sm "
+                          onChange={this.handleChange}
+                          name="data_admissao_func"
+                          type="date"
+                          required
+                        />
                       </div>
 
                     </section>
                   </div>
 
 
-                  <div id="cont-check" className="col-md-2 mt-2">
+                  <div id="cont-check" className="col-md-3 mt-1">
 
                     <fieldset className="mb-1 p-1 border">
-                      <legend className="m-0">Tipo de cliente</legend>
-                      <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                      <legend className="m-0">Acesso ao PDV</legend>
+                      <div className="form-check form-switch">
+                        <input className="form-check-input check" type="checkbox" name="acesso_pdv" id="flexRadioDefault1" />
                         <label className="form-check-label" htmlFor="flexRadioDefault1">
-                          Pessoa Física
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" htmlFor="flexRadioDefault1">
-                          Pessoa Jurídica
+                          Permitir acesso ao PDV
                         </label>
                       </div>
                     </fieldset>
-
-                    <fieldset className="p-1 border">
-                      <legend className="m-0">Situação do cliente</legend>
-                      <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" htmlFor="flexRadioDefault1">
-                          Ativo
-                        </label>
-                      </div>
-
-                      <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" htmlFor="flexRadioDefault1">
-                          Inativo
-                        </label>
-                      </div>
-                    </fieldset>
-
                   </div>
 
-                  <fieldset className="pb-0 col-md-10">
-                    <legend>Clientes autorizados para comprar</legend>
-                    <table className="table table-bordered table-success table-striped ">
-                      <thead id="tableTitulo" className="thead-dark sticky-top">
-                        <tr>
-                          <th scope="col">Nome:</th>
-                          <th scope="col">Tipo:</th>
-                        </tr>
-                      </thead>
+                  <section id="contan-user-func" className="w-50 d-flex justify-content-center ">
 
-                      <tbody id="tableCampo">
-                        <tr>
-                          <td>001</td>
-                          <td>Drogaria vieira</td>
-                        </tr>
+                    <div className="m-1">
+                      <label htmlFor="formFileLg" className="form-label mb-0">Usuário:</label>
+                      <Input className="form-control form-control-sm " value={this.state.CPF_func} type="text" disabled />
+                    </div>
 
-                        <tr>
-                          <td>002</td>
-                          <td>Drogaria vieira</td>
-                        </tr>
+                    <div className="m-1">
+                      <label htmlFor="formFileLg" className="form-label mb-0">Senha:</label>
+                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="senha_operador_func" type="password" required />
+                    </div>
 
-                        <tr>
-                          <td>002</td>
-                          <td>Drogaria vieira</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                  </fieldset>
-                  <div id="contButton" className="w-100 bg-dark p-1 d-flex justify-content-center align-items-center">
+                    <div className="m-1 form-group">
+                      <label htmlFor="formFileSm" className="form-label mb-0">Tipo: *</label>
+                      <select id="tipo" className="form-control form-control-sm">
+                        <option className="Caixa" value="caixa">Caixa</option>
+                        <option className="Gerente" value="gerente">Gerente</option>
+                        <option className="Supervisor" value="supervisor">Supervisor</option>
+                      </select>
+                    </div>
+                  </section>
+                </section>
+              </section>
+              <div id="contButton" className="w-100 bg-dark p-1 d-flex justify-content-center align-items-center">
+                <section>
+                  <div id="contButton" className="bg-dark p-1 d-flex justify-content-center align-items-center">
                     <section>
-                      <button className="btn-sm btn-primary m-1">Adicionar</button>
-                      <button className="btn-sm btn-primary m-1">Alterar</button>
-                      <button className="btn-sm btn-danger m-1">Deletar</button>
-                      <button className="btn-sm btn-success m-1">Mostrar Clientes </button>
+                      <button type="reset" className="btn-sm btn-info m-1">Limpar campo</button>
+                      <button className="btn-sm btn-primary m-1">Mostrar Clientes </button>
+                      <button className="btn-sm btn-success m-1">Salvar</button>
                     </section>
                   </div>
-                </form>
-
-              </section>
-
-            </section>
+                </section>
+              </div>
+            </form>
 
           </div>
 

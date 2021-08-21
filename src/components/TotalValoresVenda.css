@@ -209,18 +209,25 @@
 }
 
 @media (min-width: 1200px) {  
-  .input-campo-total .campo-1{
+  .input-campo-total {
+    padding-top: 10px;
+  }
+   .input-campo-total .campo-1{
     text-align: center;
     width:220px;
     height:120px;
     display:inline-block;
     margin-right: 1px;
-  } 
+  }
+  .input-campo-total legend{
+    color: #fff !important;
+    margin-bottom: 0.9px;
+  }
   .campo-1 input[type="text"]{
     text-align: center;
     width:200px;
     height:30px;
-    margin: 1px 0px 0px;
+    margin: 0px 0px 0px;
     background-color: #9db2ff;
     color: #fff;
   }
@@ -242,9 +249,9 @@
     font-size:20pt;
     text-align: center;
     width:210px;
-    height:120px;
+    height:125px;
     float:right;
-    margin: 0px 0px 0px;
+    margin: 8px -8px 0px;
   } 
   .campo-3 input[type="text"]{
     text-align: center;

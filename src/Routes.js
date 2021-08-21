@@ -5,7 +5,8 @@ import Home from './Home'
 import Estoque from './Estoque'
 import Venda from './Venda'
 import Gerencimento from './Gerencimento'
-import FormProdutos from './pages/./subPage/FormProdutos'
+import FormProdutos from './pages/./subPage/FormProdutos';
+import AlterProdutos from './pages/./subPage/AlterProdutos'
 import FormFuncionarios from './pages/subPage/FormFuncionarios'
 import Funcionarios from './Funcionarios'
 import Clientes from './Clientes'
@@ -33,14 +34,15 @@ export default function Routes(){
               <Route path="/venda" component={Venda} />
               <Route path="/gerencimento" component={Gerencimento} />
               <Route path="/formprodutos" component={FormProdutos} />
+              <Route path="/alterProdutos" component={AlterProdutos} />
               <Route path="/formfuncionarios" component={FormFuncionarios} />
               <Route path="/funcionarios" component={Funcionarios} />
               <Route path="/clientes" component={Clientes} />
               <Route path="/formclientes" component={FormClientes} />
               <Route path="/constasapagar" component={ContasApagar} />
               <Route path="/formcontasapagar" component={FormContasApagar} />
+              <Route path="/formcontasreceber" component={FormContasReceber} />
               <Route path="/contasareceber" component={ContasAreceber} />
-              <Route path="/formContaReceber" component={FormContasReceber} />
 
               <Route path="/fornecedores" component={Fornecedores} />
               <Route path="/cargosetor" component={CargoSetor} />

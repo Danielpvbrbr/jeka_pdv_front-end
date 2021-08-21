@@ -1,52 +1,54 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css"
-import { Navbar, Nav, NavDropdown} from 'react-bootstrap';
-
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import user from '.././icones/bx-user-circle.svg'
 export default class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
 
     }
-  }
+  };
+
   render() {
     return (
       <div id="menu-principal">
-        <Navbar bg="primary" expand="lg">
-          <Navbar.Brand><h3>Jaca</h3></Navbar.Brand>
+        <Navbar bg="primary" expand="md">
+        <Link to={'/home'}> <Navbar.Brand><h3>Jaca</h3></Navbar.Brand></Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse className='areaCollapse' id="basic-navbar-nav">
+            <Nav id="navHome" className="me-auto">
               <NavDropdown title="Cadastro" id="basic-nav-dropdown">
-                <Link to={'/produtos'}><NavDropdown.Item >Produtos</NavDropdown.Item></Link>
-                <Link to={'/formclientes'}><NavDropdown.Item >Clientes</NavDropdown.Item></Link>
-                <Link to={'/fornecedores'}><NavDropdown.Item >Fornecedores</NavDropdown.Item></Link>
-                <Link to={'/funcionarios'}><NavDropdown.Item >Funcionários</NavDropdown.Item></Link>
-                <Link to={'/cargosetor'}><NavDropdown.Item >Setores/Cargo</NavDropdown.Item></Link>
+                <Link className="dropdown-item" to={'/formprodutos'}>Produtos</Link>
+                <Link className="dropdown-item" to={'/formclientes'}>Clientes</Link>
+                <Link className="dropdown-item" to={'/fornecedores'}>Fornecedores</Link>
+                <Link className="dropdown-item" to={'/formfuncionarios'}>Funcionários</Link>
+                <Link className="dropdown-item" to={'/cargosetor'}>Setores/Cargo</Link>
               </NavDropdown>
 
               <NavDropdown title="Estoque" id="basic-nav-dropdown">
-                <Link to={'/produtos'}><NavDropdown.Item >Gerenciar Estoque</NavDropdown.Item></Link>
-                <Link to={'/formclientes'}><NavDropdown.Item >Tabela de Preço</NavDropdown.Item></Link>
+                <Link className="dropdown-item" to={'/estoque'}>Gerenciar Estoque</Link>
+                <Link className="dropdown-item" to={'/formclientes'}>Tabela de Preço</Link>
               </NavDropdown>
 
               <NavDropdown title="Vendas" id="basic-nav-dropdown">
-                <Link to={'/produtos'}><NavDropdown.Item >Vender(P.D.V)</NavDropdown.Item></Link>
-                <Link to={'/formclientes'}><NavDropdown.Item >Gerenciamento de Vendas</NavDropdown.Item></Link>
-                <Link to={'/fornecedores'}><NavDropdown.Item >Análise de Vendas</NavDropdown.Item></Link>
-                <Link to={'/funcionarios'}><NavDropdown.Item >Listagem de Devoluções</NavDropdown.Item></Link>
+                <Link className="dropdown-item" to={'/venda'}>Vender(P.D.V)</Link>
+                <Link className="dropdown-item" to={'/gerencimento'}>Gerenciamento de Vendas</Link>
+                <Link className="dropdown-item" to={'/analisevenda'}>Análise de Vendas</Link>
+                <Link className="dropdown-item" to={'/devolucoes'}>Listagem de Devoluções</Link>
               </NavDropdown>
 
               <NavDropdown title="Financeiro" id="basic-nav-dropdown">
-                <Link to={'/formclientes'}><NavDropdown.Item >Contas a pagar</NavDropdown.Item></Link>
-                <Link to={'/fornecedores'}><NavDropdown.Item >Contas a receber</NavDropdown.Item></Link>
+                <Link className="dropdown-item" to={'/constasapagar'}>Contas a pagar</Link>
+                <Link className="dropdown-item" to={'/contasareceber'}>Contas a receber</Link>
               </NavDropdown>
 
-              <Link className="nav-link" to={'/areadmin'}>Relatório</Link>
-              <Link className="nav-link" to={'/areadmin'}>Suporte</Link>
-              <Link className="nav-link" to={'/configuracao'}>Cofigurações</Link>
-              <Link className="nav-link" to={'/areadmin'}>Painel Admin</Link>
+              <Link className="nav-link" to={'/home'}>Relatório</Link>
+              <Link className="nav-link" to={'/home'}>Suporte</Link>
+              <Link className="nav-link" to={'/configuracao'}>Configurações</Link>
+              <img id='user' src={user} alt={user} />
+              <Link className="nav-link text-success" to={'/areadmin'}>Administrador</Link>
             </Nav>
           </Navbar.Collapse>
 

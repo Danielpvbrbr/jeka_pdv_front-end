@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Menu from './components/Menu'
-import Input from './components/Input';
-import Footer from './components/Footer'
+// import Input from './components/Input';
+// import Footer from './components/Footer'
 import SubMenu from './components/SubMenu'
 import ExtratoTotal from './components/ExtratoTotal'
 import Logo from'./components/Logo'

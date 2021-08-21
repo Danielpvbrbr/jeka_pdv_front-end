@@ -17,3 +17,10 @@
 #container-func{
   height:500px;
 }
+.contain-form label{
+  color: #fff;
+  font-size: 9pt;
+}
+#contan-user-func{
+  height:180px;
+}

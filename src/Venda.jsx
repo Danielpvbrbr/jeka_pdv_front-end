@@ -10,7 +10,7 @@ export default class Venda extends Component {
     return (
       <div className="cont-principal container-fluid">
         <div className="row">
-          <header className="col-md-12 cont-menu border">
+          <header className="col-md-12 cont-menu">
             <Menu />
           </header>
 

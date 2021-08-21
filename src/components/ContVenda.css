@@ -1,361 +1,327 @@
-@media (max-width: 575.98px) { 
-  .cont-venda-1 .cont-venda-2sub{
+@media (max-width: 575.98px) {
+  .cont-venda-1 .cont-venda-2sub {
     background-color: #9db2ff;
-    height:260px;
+    height: 260px;
   }
-  
-  .cont-venda-1 legend{
+  .cont-venda-1 legend {
     font-size: 7pt;
-    color:#fff;
+    color: #fff;
     font-weight: 600;
     margin: 2px 1px;
   }
-  
   .cont-venda-1 .input-quant {
-    float:right;
+    float: right;
   }
-  
   .cont-venda-1 .input-busca {
     margin-bottom: 3px;
-    float:left;
+    float: left;
   }
-  
-  .cont-venda-1 .input-busca input{
-    width:240px;
-    height:25px;
+  .cont-venda-1 .input-busca input {
+    width: 240px;
+    height: 25px;
     padding-left: 4px;
     border-radius: 4px;
     background-color: #9db2ff;
   }
-  
-  .cont-venda-1 .input-quant input{
-    width:86px;
-    height:25px;
+  .cont-venda-1 .input-quant input {
+    width: 86px;
+    height: 25px;
     border-radius: 4px;
     text-align: center;
     background-color: #8797ff;
   }
-  
-  .cont-venda-1 table{
-    padding:5px;
+  .cont-venda-1 table {
+    padding: 5px;
     background-color: #8797ff;
   }
-  .cont-venda-1 table thead th{
+  .cont-venda-1 table thead th {
     font-size: 6pt;
   }
-  .cont-venda-1 table tbody td{
+  .cont-venda-1 table tbody td {
     font-size: 9.5pt;
   }
-  .cont-venda-1  tbody tr td img{
-    width:50px;
+  .cont-venda-1 tbody tr td img {
+    width: 50px;
   }
-
-  .cont-venda-2{
+  .cont-venda-2 {
     background-color: #4f72ff;
   }
-  
   .cont-venda-1 .input-descricao {
     margin: 4px 0px;
-    float:left;
+    float: left;
   }
-  .cont-venda-1 .input-descricao input{
-    width:207px;
-    height:30px;
+  .cont-venda-1 .input-descricao input {
+    width: 207px;
+    height: 30px;
     padding-left: 5px;
     background-color: #9db2ff;
     margin: 0px 1.2px 1px;
   }
- 
   /* .cont-venda-3{
     background-color: #4f72ff;
   } */
-  
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) { 
-  .cont-venda-1 .cont-venda-2sub{
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .cont-venda-1 .cont-venda-2sub {
     background-color: #9db2ff;
-    height:260px;
+    height: 260px;
   }
-  
-  .cont-venda-1 legend{
+  .cont-venda-1 legend {
     font-size: 7pt;
-    color:#fff;
+    color: #fff;
     font-weight: 600;
     margin: 2px 1px;
   }
-  
   .cont-venda-1 .input-quant {
-    float:right;
+    float: right;
   }
-  
   .cont-venda-1 .input-busca {
     margin-bottom: 3px;
-    float:left;
+    float: left;
   }
-  
-  .cont-venda-1 .input-busca input{
-    width:340px;
-    height:25px;
+  .cont-venda-1 .input-busca input {
+    width: 340px;
+    height: 25px;
     padding-left: 4px;
     border-radius: 4px;
     background-color: #9db2ff;
   }
-  
-  .cont-venda-1 .input-quant input{
-    width:86px;
-    height:25px;
+  .cont-venda-1 .input-quant input {
+    width: 86px;
+    height: 25px;
     border-radius: 4px;
     text-align: center;
     background-color: #8797ff;
   }
-  
-  .cont-venda-1 table{
-    padding:5px;
+  .cont-venda-1 table {
+    padding: 5px;
     background-color: #8797ff;
   }
-  .cont-venda-1 table thead th{
+  .cont-venda-1 table thead th {
     font-size: 8pt;
   }
-  .cont-venda-1 table tbody td{
+  .cont-venda-1 table tbody td {
     font-size: 10pt;
   }
-  .cont-venda-1  tbody tr td img{
-    width:55px;
+  .cont-venda-1 tbody tr td img {
+    width: 55px;
   }
-
-  .cont-venda-2{
+  .cont-venda-2 {
     background-color: #4f72ff;
   }
-  
   .cont-venda-1 .input-descricao {
     margin: 4px 0px;
-    display:inline-block;
+    display: inline-block;
   }
-  .cont-venda-1 .input-descricao input{
-    width:245px;
-    height:30px;
+  .cont-venda-1 .input-descricao input {
+    width: 245px;
+    height: 30px;
     padding-left: 5px;
     background-color: #9db2ff;
     margin: 0px 1.2px 1px;
   }
-
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {  
-  .cont-venda-1 .cont-venda-2sub{
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cont-venda-1 .cont-venda-2sub {
     background-color: #9db2ff;
-    height:260px;
+    height: 260px;
   }
-  
-  .cont-venda-1 legend{
+  .cont-venda-1 legend {
     font-size: 7pt;
-    color:#fff;
+    color: #fff;
     font-weight: 600;
     margin: 2px 1px;
   }
-  
   .cont-venda-1 .input-quant {
-    float:right;
+    float: right;
   }
-  
   .cont-venda-1 .input-busca {
     margin-bottom: 3px;
-    float:left;
+    float: left;
   }
-  
-  .cont-venda-1 .input-busca input{
-    width:340px;
-    height:25px;
+  .cont-venda-1 .input-busca input {
+    width: 340px;
+    height: 25px;
     padding-left: 4px;
     border-radius: 4px;
     background-color: #9db2ff;
   }
-  
-  .cont-venda-1 .input-quant input{
-    width:86px;
-    height:25px;
+  .cont-venda-1 .input-quant input {
+    width: 86px;
+    height: 25px;
     border-radius: 4px;
     text-align: center;
     background-color: #8797ff;
   }
-  
-  .cont-venda-1 table{
-    padding:5px;
+  .cont-venda-1 table {
+    padding: 5px;
     background-color: #8797ff;
   }
-  .cont-venda-1 table thead th{
+  .cont-venda-1 table thead th {
     font-size: 8pt;
   }
-  .cont-venda-1 table tbody td{
+  .cont-venda-1 table tbody td {
     font-size: 10pt;
   }
-  .cont-venda-1  tbody tr td img{
-    width:55px;
+  .cont-venda-1 tbody tr td img {
+    width: 55px;
   }
-
-  .cont-venda-2{
+  .cont-venda-2 {
     background-color: #4f72ff;
   }
-  
   .cont-venda-1 .input-descricao {
     margin: 4px 0px;
-    display:inline-block;
+    display: inline-block;
   }
-  .cont-venda-1 .input-descricao input{
-    width:245px;
-    height:30px;
+  .cont-venda-1 .input-descricao input {
+    width: 245px;
+    height: 30px;
     padding-left: 5px;
     background-color: #9db2ff;
     margin: 0px 1.2px 1px;
   }
- 
-  .cont-venda-3{
+  .cont-venda-3 {
     background-color: #4f72ff;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {  
-  .cont-venda-1 legend{
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cont-venda-1 legend {
     font-size: 10pt;
-    color:#fff;
+    color: #fff;
     font-weight: 600;
     margin: 2px 1px;
   }
-  
   .cont-venda-1 .input-quant {
-    float:right;
+    float: right;
   }
-  
   .cont-venda-1 .input-busca {
     margin-bottom: 3px;
-    float:left;
+    float: left;
   }
-  
-  .cont-venda-1 .input-busca input{
-    width:400px;
-    height:30px;
+  .cont-venda-1 .input-busca input {
+    width: 400px;
+    height: 30px;
     padding-left: 5px;
     border-radius: 4px;
     background-color: #9db2ff;
   }
-  
-  .cont-venda-1 .input-quant input{
-    width:80px;
-    height:30px;
+  .cont-venda-1 .input-quant input {
+    width: 80px;
+    height: 30px;
     border-radius: 4px;
     text-align: center;
     background-color: #8797ff;
   }
-  
-  .cont-venda-1 table{
-    padding:5px;
+  .cont-venda-1 table {
+    padding: 5px;
     background-color: #8797ff;
   }
-  .cont-venda-1 table thead th{
+  .cont-venda-1 table thead th {
     font-size: 10pt;
   }
-  .cont-venda-1 table tbody td{
+  .cont-venda-1 table tbody td {
     font-size: 10pt;
   }
-  
-  .cont-venda-1  tbody tr td img{
-    width:80px;
+  .cont-venda-1 tbody tr td img {
+    width: 80px;
   }
-  .cont-venda-2sub{
+  .cont-venda-2sub {
     background-color: #9db2ff;
-    height:360px;
+    height: 360px;
   }
-  
-  .cont-venda-2{
+  .cont-venda-2 {
     background-color: #4f72ff;
   }
-  
   .cont-venda-1 .input-descricao {
     margin: 4px 0px;
-    float:left;
+    float: left;
   }
-  .cont-venda-1 .input-descricao input{
-    width:336px;
-    height:30px;
+  .cont-venda-1 .input-descricao input {
+    width: 336px;
+    height: 30px;
     padding-left: 5px;
     background-color: #9db2ff;
     margin: 0px 1.2px 1px;
   }
-  .cont-venda-3{
+  .cont-venda-3 {
     background-color: #4f72ff;
   }
-  
 }
 
-@media (min-width: 1200px) {  
-  .cont-venda-1 legend{
-    font-size: 10pt;
-    color:#fff;
+@media (min-width: 1200px) {
+
+  #contain-top {
+    padding: 4px;
+  }
+  .cont-venda-1 legend {
+    font-size: 9.5pt;
+    color: #fff;
     font-weight: 600;
-    margin: 2px 1px;
+    margin-right: -5.3rem;
+    padding: 0;
   }
-  
-  .cont-venda-1 .input-quant {
-    float:right;
-  }
-  
-  .cont-venda-1 .input-busca {
-    margin-bottom: 3px;
-    float:left;
-  }
-  
-  .cont-venda-1 .input-busca input{
-    width:400px;
-    height:30px;
-    padding-left: 5px;
+  .cont-venda-1 .input-busca input {
+    width: 450px;
+    height: 35px;
+    padding: 5px 5px;
     border-radius: 4px;
+    margin-top: -50px;
     background-color: #9db2ff;
   }
-  
-  .cont-venda-1 .input-quant input{
-    width:85.8px;
-    height:30px;
+  .cont-venda-1 .input-quant {
+    padding: 0;
+  }
+  .cont-venda-1 .input-quant input {
+    width: 85.8px;
+    height: 35px;
     border-radius: 4px;
+    margin-top: -50px;
     text-align: center;
     background-color: #8797ff;
   }
-  
-  .cont-venda-1 table{
-    padding:5px;
+  .cont-venda-1 table {
+    padding: 5px;
     background-color: #8797ff;
   }
-  .cont-venda-1 table thead th{
+  .cont-venda-1 table thead th {
     font-size: 11pt;
   }
-  .cont-venda-1 table tbody td{
+  .cont-venda-1 table tbody td {
     font-size: 12pt;
   }
-  
-  .cont-venda-1  tbody tr td img{
-    width:80px;
+  .cont-venda-1 tbody tr td img {
+    width: 80px;
   }
-  .cont-venda-2sub{
+  .cont-venda-2sub {
     background-color: #9db2ff;
-    height:360px;
+    height: 376px;
   }
-  
-  .cont-venda-2{
+  .cont-venda-2sub #cointainList {
+    height: 376px;
+    overflow: auto;
+  }
+  .cont-venda-2sub #cointainList thead {
+    background-color: #4f72ff;
+    color: #fff;
+  }
+  .cont-venda-2 {
     background-color: #4f72ff;
   }
-  
   .cont-venda-1 .input-descricao {
     margin: 4px 0px;
-    float:left;
+    float: left;
   }
-  .cont-venda-1 .input-descricao input{
-    width:400px;
-    height:30px;
+  .cont-venda-1 .input-descricao input {
+    width: 400px;
+    height: 30px;
     padding-left: 5px;
     background-color: #9db2ff;
     margin: 0px 1.2px 1px;
   }
-  .cont-venda-3{
-    background-color: #4f72ff;
+  .cont-venda-3 {
+    /* background-color: #4f72ff; */
   }
 }

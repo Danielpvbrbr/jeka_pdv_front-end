@@ -8,6 +8,8 @@ export default class Input extends Component {
         value={this.props.value}
         name={this.props.name}
         id={this.props.id}
+        accept={this.props.accept}
+        checked={this.props.checked}
         readOnly={this.props.readOnly}
         disabled={this.props.disabled}
         required={this.props.required}

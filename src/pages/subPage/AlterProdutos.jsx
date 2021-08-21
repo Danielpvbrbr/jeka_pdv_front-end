@@ -1,153 +1,132 @@
 import React, { Component } from 'react';
-import Menu from '../../components/Menu';
-import SubMenu from '../../components/SubMenu';
 import "../../Home.css";
-import "../pages/../subPage/FormProdutos.css";
+import "./AlterProdutos.css";
 import "../../components/Footer";
 import axios from 'axios';
-import Input from '../../components/Input';
-export default class FormProdutos extends Component {
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
+export default class AlterProdutos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      IMG: '',
-      img_produtos: [],
-      img_preview: []
+      description: '',
+      provider: '',
+      unity: '',
+      localization: '',
+      reference: '',
+      manufacturer: '',
+      barCode: '',
+      sector: '',
+      internalCode: '',
+      costPrice: '',
+      salePrice: '',
+      wholesalePrice: '',
+      promotionalPrice: '',
+      currentInventory: '',
     }
   };
 
-  dataAtualFormatada = () => {
-    var data = new Date(),
-      dia = data.getDate().toString().padStart(2, '0'),
-      mes = (data.getMonth() + 1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
-      ano = data.getFullYear();
-    return (ano + "-" + mes + "-" + dia);
+
+
+  handlelocation = (e) => {
+    this.setState({ localization: e.target.value });
   };
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  deleteStock = () => {
+    const id = cookies.get('id');
 
-  };
-
-  uploadAction = () => {
-    const formData = new FormData();
-    const imagedata = document.querySelector('input[type="file"]').files[0];
-    formData.append("IMG", imagedata);
-
-    fetch("http://localhost:3001/api/img", {
-      mode: 'no-cors',
-      method: "POST",
-      headers: {
-        "Content-Type": "form-data",
-        "Accept": "image/png",
-        "type": "formData"
-      },
-      body: formData
-    }).then(function (res) {
-      if (res.ok) {
-        alert("Enviado com sucesso! ");
-      } else if (res.status === 401) {
-        alert("Oops! ");
+    axios.delete(`http://localhost:3001/api/produtos/estoque/${id}`).then(res => {
+      if (window.confirm("Confirma o cancelamento do produto!")) {
+        console.log("Produto deletado com sucesso!")
+        window.location.replace('/estoque')
       }
-    }, function (e) {
-      alert("Erro ao enviar formulário!");
+
+    })
+  };
+
+  componentDidMount = async () => {
+    const id = cookies.get('id');
+
+    axios.get(`http://localhost:3001/api/produtos/${id}`).then(res => {
+      const description = res.data.map(person => person.descricao_produt);
+      const provider = res.data.map(person => person.forn_produt);
+      const unity = res.data.map(person => person.unidade_produt);
+      const localization = res.data.map(person => person.local_produt);
+      const reference = res.data.map(person => person.referencia_produt);
+      const manufacturer = res.data.map(person => person.fabricante_produt);
+      const barCode = res.data.map(person => person.cod_barras_produt);
+      const sector = res.data.map(person => person.setor_produt);
+      const internalCode = res.data.map(person => person.cod_interno_produt);
+      const costPrice = res.data.map(person => person.preco_custo_produt);
+      const salePrice = res.data.map(person => person.preco_venda_produt);
+      const wholesalePrice = res.data.map(person => person.preco_atacado_produt);
+      const promotionalPrice = res.data.map(person => person.preco_promo_produt);
+      const currentInventory = res.data.map(person => person.estoque_atual_produt);
+
+      this.setState({
+        description,
+        provider,
+        unity,
+        localization,
+        reference,
+        manufacturer,
+        barCode,
+        sector,
+        internalCode,
+        costPrice,
+        salePrice,
+        wholesalePrice,
+        promotionalPrice,
+        currentInventory,
+      })
     });
-  }
+  };
 
-  handleSubmit = (e) => {
-    const {
-      descricao_produt,
-      local_produt,
-      referencia_produt,
-      fabricante_produt,
-      cod_barras_produt,
-      cod_interno_produt,
-      preco_custo_produt,
-      preco_venda_produt,
-      preco_atacado_produt,
-      preco_promo_produt,
-      estoque_atual_produt,
-      foto_produt
-    } = this.state;
+  handleSubmit = async (e) => {
+    const id = cookies.get('id');
 
-    const fornecedor = document.getElementById('fornecedor');
-    const option_fornecedor = fornecedor.options[fornecedor.selectedIndex];
-    const forn_produt = option_fornecedor.text;
-
-    const setor = document.getElementById('setor');
-    const option_setor = setor.options[setor.selectedIndex];
-    const setor_produt = option_setor.text;
-
-    const unidade = document.getElementById('unidade');
-    const option_unidade = unidade.options[unidade.selectedIndex];
-    const unidade_produt = option_unidade.text;
-
-    const data_cadastro_produt = this.dataAtualFormatada();
-
-    axios.post('http://localhost:3001/api/cadastro/produtos', {
-      descricao_produt,
-      forn_produt,
-      unidade_produt,
-      local_produt,
-      referencia_produt,
-      fabricante_produt,
-      cod_barras_produt,
-      setor_produt,
-      cod_interno_produt,
-      preco_custo_produt,
-      preco_venda_produt,
-      preco_atacado_produt,
-      preco_promo_produt,
-      estoque_atual_produt,
-      data_cadastro_produt,
-      foto_produt
+    axios.put('http://localhost:3001/api/update/cadastro/produtos', {
+      id,
+      description: this.state.description,
+      provider: this.state.provider,
+      unity: this.state.unity,
+      localization: this.state.localization,
+      reference: this.state.reference,
+      manufacturer: this.state.manufacturer,
+      barCode: this.state.barCode,
+      sector: this.state.sector,
+      internalCode: this.state.internalCode,
+      costPrice: this.state.costPrice,
+      salePrice: this.state.salePrice,
+      wholesalePrice: this.state.wholesalePrice,
+      promotionalPrice: this.state.promotionalPrice,
+      currentInventory: this.state.currentInventory,
+      alert
     }).then(res => {
-      // console.log(res)
-      // console.log(res.data)
-      window.location.replace('/estoque');
-    });
-
-
+      alert('Alteração realizada com sucesso!')
+      window.location.replace('/estoque')
+    })
     e.preventDefault()
-  };
-
-  limpar = () => {
-    document.getElementById('campo').value = ''
-  };
-
-
-  // componentDidMount = () => {
-  //   axios.get('http://localhost:3001/api/img/toView').then(res => {
-  //     console.log(res)
-  //     //  console.log(res.headers)
-  //     this.setState({ img_produtos: res.data })
-
-  //   })
-  // }
+  }
 
   render() {
     return (
-
-      <div className="cont-principal container-fluid">
+      <div id="altProdut" className="container">
         <div className="row">
-          <header className="col-md-12 cont-menu">
-            <Menu />
-          </header>
 
           <div className="col-md-12">
-            <form className="container" onSubmit={this.handleSubmit} encType="multipart/form-data" action="">
-              <div>
-                <SubMenu />
-              </div>
+            <form className="m-2 border " onSubmit={this.handleSubmit}>
 
-              <section className="container p-0 m-0 h-75 border">
 
-                <section className="m-2 mb-3 contain-form ">
+              <section className=" p-0 m-0 h-75 border">
+
+                <section className="m-2 mb-3 contain-alt ">
                   <section className="form">
 
                     <div className="mb-1 inp">
                       <label htmlFor="formFileMultiple" className="form-label">Descrição do Produto:</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="descricao_produt" type="texto" required maxLength="20" />
+                      <input value={this.state.description || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ description: e.target.value })} name="descricao_produt" type="texto" required maxLength="20" />
                     </div>
 
                     <div className="inp1 form-group">
@@ -184,7 +163,7 @@ export default class FormProdutos extends Component {
 
                     <div className="mb-1 inp">
                       <label htmlFor="formFileLg" className="form-label">Localização do produto, gôndola, pratileira:</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="local_produt" type="texto" maxLength="20" />
+                      <input value={this.state.localization || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ localization: e.target.value })} name="local_produt" type="texto" maxLength="20" />
                     </div>
                   </section>
 
@@ -192,17 +171,17 @@ export default class FormProdutos extends Component {
 
                     <div className="mb-1 inp">
                       <label htmlFor="formFile" className="form-label">Referência/Observação</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="referencia_produt" type="texto" maxLength="20" />
+                      <input value={this.state.reference || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ reference: e.target.value })} name="referencia_produt" type="texto" maxLength="20" />
                     </div>
 
                     <div className="mb-1 inp">
                       <label htmlFor="formFileMultiple" className="form-label">Fabricantes/Marca:</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="fabricante_produt" type="texto" required maxLength="20" />
+                      <input value={this.state.manufacturer || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ manufacturer: e.target.value })} name="fabricante_produt" type="texto" required maxLength="20" />
                     </div>
 
                     <div className="mb-1 inp">
                       <label htmlFor="formFileSm" className="form-label">Código de barras:</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="cod_barras_produt" type="texto" maxLength="13" />
+                      <input value={this.state.barCode || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ barCode: e.target.value })} name="cod_barras_produt" type="texto" maxLength="13" />
                     </div>
 
                     <div className="inp1 form-group">
@@ -217,7 +196,7 @@ export default class FormProdutos extends Component {
 
                     <div className="mb-1 inp">
                       <label htmlFor="formFileLg" className="form-label">Código interno:</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="cod_interno_produt" type="number" maxLength="14" />
+                      <input value={this.state.internalCode || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ internalCode: e.target.value })} name="cod_interno_produt" type="number" maxLength="14" />
                     </div>
                   </section>
 
@@ -229,7 +208,7 @@ export default class FormProdutos extends Component {
                         <div className="input-group-prepend">
                           <div className="input-group-text">R$</div>
                         </div>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="preco_custo_produt" type="number" required maxLength="7" />
+                        <input value={this.state.costPrice || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ costPrice: e.target.value })} name="preco_custo_produt" type="number" required maxLength="7" />
                       </div>
                     </div>
 
@@ -239,7 +218,7 @@ export default class FormProdutos extends Component {
                         <div className="input-group-prepend">
                           <div className="input-group-text">R$</div>
                         </div>
-                        <input className="form-control form-control-sm" onChange={this.handleChange} name="preco_venda_produt" type="number" required maxLength="7" />
+                        <input value={this.state.salePrice || ''} className="form-control form-control-sm" onChange={(e) => this.setState({ salePrice: e.target.value })} name="preco_venda_produt" type="number" required maxLength="7" />
                       </div>
                     </div>
 
@@ -249,7 +228,7 @@ export default class FormProdutos extends Component {
                         <div className="input-group-prepend">
                           <div className="input-group-text">R$</div>
                         </div>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="preco_atacado_produt" type="number" maxLength="7" />
+                        <input value={this.state.wholesalePrice || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ wholesalePrice: e.target.value })} name="preco_atacado_produt" type="number" maxLength="7" />
                       </div>
                     </div>
 
@@ -259,7 +238,7 @@ export default class FormProdutos extends Component {
                         <div className="input-group-prepend">
                           <div className="input-group-text">R$</div>
                         </div>
-                        <Input className="form-control form-control-sm " onChange={this.handleChange} name="preco_promo_produt" type="number" maxLength="7" />
+                        <input value={this.state.promotionalPrice || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ promotionalPrice: e.target.value })} name="preco_promo_produt" type="number" maxLength="7" />
                       </div>
                     </div>
                   </section>
@@ -268,23 +247,21 @@ export default class FormProdutos extends Component {
 
                     <div className="inp1">
                       <label htmlFor="formFile" className="form-label">Estoque Atual</label>
-                      <Input className="form-control form-control-sm " onChange={this.handleChange} name="estoque_atual_produt" type="number" required />
+                      <input value={this.state.currentInventory || ''} className="form-control form-control-sm " onChange={(e) => this.setState({ currentInventory: e.target.value })} name="estoque_atual_produt" type="number" />
                     </div>
 
-                    <div className="inp ">
+                    <div className="inp">
                       <label htmlFor="formFileLg" className="form-label">Foto do produto:</label>
-                      <Input accept="image/*" className="form-control form-control-sm " type="file" name="data" />
-                      <Input className="btn-sm btn-info m-1" type="button" value="Adiconar" onClick={() => this.uploadAction()} />
+                      <input className="form-control form-control-sm " onChange={this.handleChange} name="foto_produt" type="file" />
                     </div>
                   </section>
 
                 </section>
               </section>
               <div id="contButton" className=" w-100 bg-dark p-1 d-flex justify-content-center align-items-center">
-
                 <section>
-                  <button type="reset" className="btn-sm btn-info m-1">Limpar os campos</button>
-                  <button type="submit" className="btn-sm btn-success m-1">Adiconar</button>
+                  <button onClick={() => this.deleteStock()} className="btn-sm btn-danger m-1">Deletar</button>
+                  <button type="submit" className="btn-sm btn-success m-1">Salvar</button>
                 </section>
               </div>
             </form>

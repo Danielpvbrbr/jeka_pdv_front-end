@@ -1,10 +1,24 @@
 import React, { Component } from "react";
-import Input from "../components/Input"
+import Input from "../components/Input";
 import { Link } from "react-router-dom";
-import "./ListContaReceber.css"
+import "./ListContaReceber.css";
+import axios from 'axios';
 
 export default class ListContaReceber extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: []
+    }
+  };
+  componentDidMount = async () => {
+    await axios.get('http://localhost:3001/api/conta/receber').then(res => {
+      console.log(res.data)
+      this.setState({ list: res.data })
+    })
+  };
   render() {
+    const { list } = this.state;
     return (
       <div id="contAccountReceive" className="border border-success">
         <div >
@@ -18,87 +32,31 @@ export default class ListContaReceber extends Component {
           <section id="contFunction">
             <table className="table table-bordered table-success table-striped ">
               <thead id="tableTitulo" className="thead-dark sticky-top">
-                <tr >
-                  <th scope="col">Cód.Conta</th>
-                  <th scope="col">Nome do cliente</th>
-                  <th scope="col">Data de emissão</th>
-                  <th scope="col">Data de pagamento</th>
-                  <th scope="col">Valor a receber</th>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Cód:</th>
+                  <th scope="col">N° do Documento:</th>
+                  <th scope="col">Nome do cliente:</th>
+                  <th scope="col">Data de emissão:</th>
+                  <th scope="col">Data de pagamento:</th>
+                  <th scope="col">Valor a receber:</th>
                 </tr>
               </thead>
 
               <tbody id="tableCampo">
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>001</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
-                <tr>
-                  <td>002</td>
-                  <td>Drogaria vieira</td>
-                  <td>25/26/2820</td>
-                  <td>20/05/2020</td>
-                  <td>99,58</td>
-                </tr>
-
+                {
+                  list.map((list, i) =>
+                    <tr key={i}>
+                      <td> <Input id="check" type="checkbox" /></td>
+                      <td>{i++}</td>
+                      <td>{list.nome}</td>
+                      <td>{list.numero_doc}</td>
+                      <td>{list.emissao}</td>
+                      <td>{list.vencimento}</td>
+                      <td>{list.preco}</td>
+                    </tr>
+                  )
+                }
               </tbody>
             </table>
           </section>
@@ -107,7 +65,7 @@ export default class ListContaReceber extends Component {
               <button className="btn-sm btn-primary m-1">Selecionar todos</button>
               <button className="btn-sm btn-primary m-1">Exibir todos</button>
               <button className="btn-sm btn-danger m-1">Deletar</button>
-              <Link to={'/formContaReceber'}>
+              <Link to={'/formcontasreceber'}>
                 <button className="btn-sm btn-success m-1">Adiconar</button>
               </Link>
             </section>

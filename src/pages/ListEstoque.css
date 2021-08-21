@@ -1,82 +1,277 @@
-@media (max-width: 575.98px) { 
-  
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) { 
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {  
- 
-  
-} 
-
-@media (min-width: 992px) and (max-width: 1199.98px){
-  #contain-estoque{
-    height: 28.6em;
-  } 
-  
-  #contain-1, #contain-2{
-    height:29.6em;
+@media (max-width: 575.98px) {
+  body {
+    overflow-y: auto;
   }
-
-  #contain-1 #contain-meio{
-    height:22.7em;
-  }
-  #contain-1 #contain-meio label{
-    font-size: 8.1pt;
-    margin:0;
-    color:#ffffff; 
-  }
-  
-  #contain-2{
-     padding:0;
-  }
-
-  #contain-2 #listContain{
-    overflow-y: scroll;
-    height:29em;
-  }
-
-  #contain-2 img{
-    width:60px;
-  }
-  
-}
-
-@media (min-width: 1200px) { 
-  #contain-estoque{
+  #contain-estoque {
     height: 27.7em;
-  } 
-  
-  #contain-1, #contain-2{
-    height:27.4em;
   }
-
-  #contain-1 #contain-meio{
-    height:21.8em;
+  #contain-estoque {
+    background-color: #9db2ff;
   }
-  #contain-1 #contain-meio label{
-    font-size: 10pt;
-    margin:0;
-    color:#ffffff; 
+  #contain-produtos {
+    height: 22.7em;
+    padding: 0;
   }
-  
-  #contain-2{
-     padding:0;
+  #contain-produtos #list-produtos {
+    width: 70em;
+    height: 22.5em;
+    padding: 10px;
+    overflow: auto;
   }
-
-  #contain-2 #listContain{
-    overflow-y: scroll;
-    height:27em;
+  #contain-produtos #list-produtos li {
+    cursor: pointer;
+    margin-left: 10px
   }
-
-  #contain-2 img{
-    width:60px;
+  #list-produtos #check {
+    position: relative;
+    top: 2.2rem;
+    right: 10px;
+    margin-left: 3px
   }
-  #contain-2 #img-delete{
-    width:20px;
+  #contain-produtos img {
+    width: 60px;
+    cursor: pointer;
   }
-  
+  #contain-produtos #listContain {
+    overflow: auto;
+    height: 27em;
+  }
+  #contain-produtos #img-icon {
+    width: 20px;
+  }
+  #form-modal {
+    background-color: #1d4eff;
+    width: 370px;
+    height: 720px;
+    position: absolute;
+    top: 3.5rem;
+    left: 3%;
+    overflow: auto;
+  }
+  #form-modal img {
+    position: relative;
+    cursor: pointer;
+    top: 1%;
+    left: 92%;
+  }
+  #contButton button {
+    font-size: 8pt;
+  }
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #contain-estoque {
+    height: 27.7em;
+  }
+  #contain-estoque {
+    background-color: #9db2ff;
+  }
+  #contain-produtos {
+    height: 22.7em;
+    padding: 0;
+  }
+  #contain-produtos #list-produtos {
+    width: 70em;
+    height: 22.5em;
+    padding: 10px;
+    overflow: auto;
+  }
+  #contain-produtos #list-produtos li {
+    cursor: pointer;
+    margin-left: 10px
+  }
+  #list-produtos #check {
+    position: relative;
+    top: 2.2rem;
+    right: 10px;
+    margin-left: 3px
+  }
+  #contain-produtos img {
+    width: 60px;
+    cursor: pointer;
+  }
+  #contain-produtos #listContain {
+    overflow-y: scroll;
+    height: 27em;
+  }
+  #contain-produtos #img-icon {
+    width: 20px;
+  }
+  #form-modal {
+    background-color: #1d4eff;
+    width: 490px;
+    height: 420px;
+    position: absolute;
+    top: 10rem;
+    left: 7.5%;
+  }
+  #form-modal img {
+    position: relative;
+    cursor: pointer;
+    top: 1%;
+    left: 93.5%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #contain-estoque {
+    height: 27.7em;
+  }
+  #contain-estoque {
+    background-color: #9db2ff;
+  }
+  #contain-produtos {
+    height: 22.7em;
+    padding: 0;
+  }
+  #contain-produtos #list-produtos {
+    width: 70em;
+    height: 22.5em;
+    padding: 10px;
+    overflow: auto;
+  }
+  #contain-produtos #list-produtos li {
+    cursor: pointer;
+    margin-left: 10px
+  }
+  #list-produtos #check {
+    position: relative;
+    top: 2.2rem;
+    right: 10px;
+    margin-left: 3px
+  }
+  #contain-produtos img {
+    width: 60px;
+    cursor: pointer;
+  }
+  #contain-produtos #listContain {
+    overflow-y: scroll;
+    height: 27em;
+  }
+  #contain-produtos #img-icon {
+    width: 20px;
+  }
+  #form-modal {
+    background-color: #1d4eff;
+    width: 600px;
+    height: 428px;
+    position: absolute;
+    top: 10rem;
+    left: 10%;
+  }
+  #form-modal img {
+    position: relative;
+    cursor: pointer;
+    top: 1%;
+    left: 96.2%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #contain-estoque {
+    height: 27.7em;
+  }
+  #contain-estoque {
+    background-color: #9db2ff;
+  }
+  #contain-produtos {
+    height: 22.7em;
+    padding: 0;
+  }
+  #contain-produtos #list-produtos {
+    width: 70em;
+    height: 22.5em;
+    padding: 10px;
+    overflow: auto;
+  }
+  #contain-produtos #list-produtos li {
+    cursor: pointer;
+    margin-left: 10px
+  }
+  #list-produtos #check {
+    position: relative;
+    top: 2.2rem;
+    right: 10px;
+    margin-left: 3px
+  }
+  #contain-produtos img {
+    width: 60px;
+    cursor: pointer;
+  }
+  #contain-produtos #listContain {
+    overflow-y: scroll;
+    height: 27em;
+  }
+  #contain-produtos #img-icon {
+    width: 20px;
+  }
+  #form-modal {
+    background-color: #1d4eff;
+    width: 800px;
+    height: 428px;
+    position: absolute;
+    top: 10rem;
+    left: 10%;
+  }
+  #form-modal img {
+    position: relative;
+    cursor: pointer;
+    top: 1%;
+    left: 96.2%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #contain-estoque {
+    height: 27.7em;
+  }
+  #contain-estoque {
+    background-color: #9db2ff;
+  }
+  #contain-produtos {
+    height: 22.7em;
+    padding: 0;
+  }
+  #contain-produtos #list-produtos {
+    width: 70em;
+    height: 22.5em;
+    padding: 10px;
+    overflow: auto;
+  }
+  #contain-produtos #list-produtos li {
+    cursor: pointer;
+    margin-left: 10px
+  }
+  #list-produtos #check {
+    position: relative;
+    top: 2.2rem;
+    right: 10px;
+    margin-left: 2px
+  }
+  #contain-produtos img {
+    width: 60px;
+    cursor: pointer;
+  }
+  #contain-produtos #listContain {
+    overflow-y: scroll;
+    height: 27em;
+  }
+  #contain-produtos #img-icon {
+    width: 23px;
+    margin: 1px;
+  }
+  #form-modal {
+    background-color: #1d4eff;
+    width: 800px;
+    height: 420px;
+    position: absolute;
+    top: 10rem;
+    left: 21%;
+  }
+  #form-modal img {
+    position: relative;
+    cursor: pointer;
+    top: 1%;
+    left: 96.2%;
+  }
+}
