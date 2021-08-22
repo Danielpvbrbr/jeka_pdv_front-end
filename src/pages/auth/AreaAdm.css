@@ -1,0 +1,49 @@
+#contAdmin #contain1 {
+  height: 570px;
+}
+
+#contAdmin #contain1-sub1 {
+  height: 480px;
+  margin-top: 80px;
+}
+
+#contain1-sub1 #contain-perfil img {
+  position: relative;
+  top: -75px;
+  width: 150px;
+  text-align: center;
+  border: solid 0.2em #fff;
+  background-color: #4f72ff;
+  border-radius: 6em;
+}
+
+#contain1-sub1 #contain-perfil #titulo {
+  position: relative;
+  top: -85px;
+  width: 100%;
+  margin: 0;
+  padding:0;
+  text-align: center;
+  color: #fff;
+}
+
+#contain1-sub1 #contain-perfil #titulo h1, p{
+  margin-top: 20px;
+ font-size: 10pt;
+}
+
+#contain1-sub1 #contain-perfil {
+  height: 150px;
+  text-align: center;
+}
+
+/* ===================================//====================================== */
+
+#contAdmin #contain2{
+  height: 570px;
+}
+
+#contAdmin #contain1-sub2 {
+  height: 480px;
+  margin-top: 80px;
+}

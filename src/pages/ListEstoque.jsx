@@ -5,20 +5,22 @@ import hamburgue from '../icones/hamburgue.png';
 import edit from '../icones/edit.svg';
 import circle from '../icones/bx-x-circle.svg';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import api from '../services/api'
 import Cookies from 'universal-cookie';
 import AlterProdutos from './subPage/AlterProdutos';
+const cookies = new Cookies();
 
 export default class ListContasApagar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       list_produtos: [],
+      botaoSelect: 'Selecionar todos',
       validator: true,
       verific: true,
-      getValue: '',
       show: false,
+      deci: false,
+
     }
   };
 
@@ -31,7 +33,6 @@ export default class ListContasApagar extends Component {
   };
 
   getValueId = (id) => {
-    const cookies = new Cookies();
     cookies.set("id", id.toString(), { path: "/estoque" });
     this.change();
   };
@@ -51,12 +52,32 @@ export default class ListContasApagar extends Component {
     this.setState({ show: true })
   };
 
-  showValue = (value) => {
-    console.log('=>', value)
+
+  showValue = async (value) => {
+    // const id = document.cookie = `${value = value}`
+    //    const response = await api.delete(`api/produtos/estoque/${id}`)
+    //    console.log(response)
+
+    //    const id = document.cookie = `${this.state.ValueAll = this.state.ValueAll }`
+    //    // const response = await api.delete(`api/produtos/estoque/${id}`)
+    //    // console.log(response)
+    //    console.log(this.state.ValueAll)
+
+    // console.log("valores", id)
+
   };
 
-  delMult = (id) => {
-    this.showValue(id)
+  select = (id) => {
+    this.setState({ deci: !this.state.deci })
+    if (this.state.deci === false) {
+      // add cookie
+      cookies.set(id, id, { path: "/estoque" });
+    } else {
+      // remove cookie
+      let data = new Date(1999, 0, 12);
+      data = data.toGMTString();
+      document.cookie = `${id}=${id}; expires='${data}'; path=/estoque`;
+    }
   };
 
   checkedAll = () => {
@@ -68,25 +89,38 @@ export default class ListContasApagar extends Component {
         check[i].checked = true;
         const getValue = check[i].value;
         this.showValue(getValue)
+        //add all cookies
+        cookies.set(getValue, getValue, { path: "/estoque" });
+        this.setState({
+          botaoSelect: 'Desmacar todos'
+        })
       }
     } else {
       for (let i = 0, n = check.length; i < n; i++) {
         check[i].checked = false;
+        const dellValue = check[i].value;
+        //remove all cookies
+        let data = new Date(1999, 0, 12);
+        data = data.toGMTString();
+        document.cookie = `${dellValue}=${dellValue}; expires='${data}'; path=/estoque`;
+        this.setState({ botaoSelect: 'Selecionar todos' })
       }
     }
   };
 
-  deleteStock = (id) => {
+  deleteStock = async (id) => {
     if (window.confirm("Confirma o cancelamento do produto!")) {
-      axios.delete(`api/produtos/estoque/${id}`).then(res => {
+      const response = await api.delete(`api/produtos/estoque/${id}`)
+      if (response) {
         alert("Produto deletado com sucesso!");
         window.location.replace('/estoque');
-      })
+      }
     }
   };
 
 
   render() {
+
     const { list_produtos, validator, show } = this.state;
     return (
       <div id="contain-estoque" className="border border-success">
@@ -114,7 +148,7 @@ export default class ListContasApagar extends Component {
             {
               list_produtos.map((produtos, i) =>
                 <ul key={i} className="list-group">
-                  <Input onClick={() => this.delMult(produtos.id_produtos)} value={produtos.id_produtos} id="check" type="checkbox" />
+                  <Input onClick={() => this.select(produtos.id_produtos)} value={produtos.id_produtos} id="check" type="checkbox" />
                   <li className="mb-1 text-secondary list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
                     <section>
                       <img alt="img-produto" src={hamburgue} />
@@ -136,8 +170,8 @@ export default class ListContasApagar extends Component {
 
         <div id="contButton" className="w-100 bg-dark p-1 d-flex justify-content-center align-items-center">
           <section className="">
-            <button onClick={() => this.checkedAll()} className="btn-sm btn-primary m-1">Selecionar todos</button>
-            <button onClick={() => this.showEveryone()} className="btn-sm btn-primary m-1">Exibir todos</button>
+            <button onClick={() => this.checkedAll()} className="btn-sm btn-primary m-1">{this.state.botaoSelect}</button>
+            <button onClick={() => this.showEveryone()} className="btn-sm btn-info m-1">Exibir todos</button>
             <button onClick={() => this.showValue()} className="btn-sm btn-danger m-1">Deletar</button>
             <Link to={'/formprodutos'}>
               <button className="btn-sm btn-success m-1">Adiconar</button>
